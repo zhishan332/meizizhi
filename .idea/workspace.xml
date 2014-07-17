@@ -2,40 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/img/0a7b22a80fcb540.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/img/5224cb43b080cfaadd8452c31327ac2c.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/img/dbdfbcebd43deaf.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/DbConfig.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/dao/MySQL.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/views/footer-a.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/views/meizi.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/meizi.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/sass_stdlib.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/views/top-a.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/views/view.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/Config.php" afterPath="$PROJECT_DIR$/includes/Config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/service/ImgService.php" afterPath="$PROJECT_DIR$/includes/service/ImgService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/img/11.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/img/21.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/img/a.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/img/b.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/admin/AdminController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/admin/AdminService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/admin/views/img.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/admin/img.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/admin/views/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/admin/index.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/admin/views/top.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/statics/css/common.css" afterPath="$PROJECT_DIR$/web/statics/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/index.html" afterPath="$PROJECT_DIR$/web/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/meizi.html" afterPath="$PROJECT_DIR$/web/views/meizi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/top-a.html" afterPath="$PROJECT_DIR$/web/views/top-a.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
+    <list id="f2fb19f0-053b-44d3-9f51-c4e50d112c22" name="New changelist" comment="" />
     <ignored path="meizizhi.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405562669003" ignored="false" />
-    <file path="/meizi.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405568464409" ignored="false" />
-    <file path="/common.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405568338107" ignored="false" />
-    <file path="/index.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405582811554" ignored="false" />
+    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405583973350" ignored="false" />
+    <file path="/meizi.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405596983403" ignored="false" />
+    <file path="/common.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405589699854" ignored="false" />
+    <file path="/index.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405584886856" ignored="false" />
     <file path="/top-a.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405583105124" ignored="false" />
     <file path="/view.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405567913155" ignored="false" />
     <file path="/a.dummy" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405578075389" ignored="false" />
     <file path="/ImgService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405580251276" ignored="false" />
     <file path="/MySQL.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405579505702" ignored="false" />
     <file path="/meizi.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405580381899" ignored="false" />
+    <file path="/top.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405585028001" ignored="false" />
+    <file path="/index.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405584551585" ignored="false" />
+    <file path="/img.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405586405585" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,40 +54,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="meizi.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views/meizi.html">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/admin/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="96" selection-start="277" selection-end="277" vertical-scroll-proportion="-2.8387096">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h2#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/statics/css/common.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="26" selection-start="570" selection-end="570" vertical-scroll-proportion="0.375">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="top-a.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views/top-a.html">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="52" selection-start="816" selection-end="821" vertical-scroll-proportion="-0.7096774">
+            <state line="8" column="0" selection-start="166" selection-end="438" vertical-scroll-proportion="-5.677419">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="top.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/admin/views/top.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="53" selection-start="805" selection-end="805" vertical-scroll-proportion="-10.354838">
               <folding>
                 <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -97,71 +84,83 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySQL.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/dao/MySQL.php">
+      <file leaf-file-name="img.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/admin/views/img.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="43" selection-start="2479" selection-end="2479" vertical-scroll-proportion="-6.612903">
+            <state line="44" column="9" selection-start="2073" selection-end="2073" vertical-scroll-proportion="-31.225807">
               <folding>
-                <element signature="e#6#825#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImgService.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/service/ImgService.php">
+      <file leaf-file-name="meizi.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/views/meizi.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="30" selection-start="539" selection-end="539" vertical-scroll-proportion="-8.5161295">
+            <state line="23" column="49" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.3181818">
               <folding>
-                <element signature="e#6#108#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#span#0;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#span#0;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views/index.html">
+      <file leaf-file-name="top-a.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/views/top-a.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="36" selection-start="618" selection-end="618" vertical-scroll-proportion="-9.935484">
+            <state line="63" column="0" selection-start="3294" selection-end="3294" vertical-scroll-proportion="-17.741936">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.php">
+      <file leaf-file-name="dbdfbcebd43deaf.jpg" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/statics/img/dbdfbcebd43deaf.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/statics/css/common.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="40" selection-start="359" selection-end="359" vertical-scroll-proportion="-8.5161295">
+            <state line="28" column="19" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="meizi.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/meizi.php">
+      <file leaf-file-name="phrase.rnc" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/phrase.rnc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="25" selection-start="466" selection-end="466" vertical-scroll-proportion="-10.354838">
+            <state line="85" column="31" selection-start="1951" selection-end="1957" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/Config.php">
+      <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/statics/plugin/bootstrap/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="16" selection-start="498" selection-end="498" vertical-scroll-proportion="-10.645162">
+            <state line="4465" column="0" selection-start="89695" selection-end="89695" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DbConfig.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/DbConfig.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="22" selection-start="224" selection-end="224" vertical-scroll-proportion="-6.096774">
-              <folding>
-                <element signature="e#6#109#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -184,11 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/views/footer-a.html" />
-        <option value="$PROJECT_DIR$/web/index.php" />
-        <option value="$PROJECT_DIR$/web/view.php" />
-        <option value="$PROJECT_DIR$/web/views/view.html" />
-        <option value="$PROJECT_DIR$/includes/dao/MysqlHelper.php" />
         <option value="$PROJECT_DIR$/includes/dao/DbMysql.php" />
         <option value="$PROJECT_DIR$/includes/service/ImgService.php" />
         <option value="$PROJECT_DIR$/includes/Config.php" />
@@ -196,9 +190,15 @@
         <option value="$PROJECT_DIR$/includes/dao/MySQL.php" />
         <option value="$PROJECT_DIR$/web/meizi.php" />
         <option value="$PROJECT_DIR$/web/views/index.html" />
+        <option value="$PROJECT_DIR$/web/admin/index.html" />
+        <option value="$PROJECT_DIR$/web/admin/index.php" />
+        <option value="$PROJECT_DIR$/web/admin/img.php" />
+        <option value="$PROJECT_DIR$/web/admin/views/index.html" />
+        <option value="$PROJECT_DIR$/web/admin/views/top.html" />
+        <option value="$PROJECT_DIR$/web/admin/views/img.html" />
+        <option value="$PROJECT_DIR$/web/statics/css/common.css" />
         <option value="$PROJECT_DIR$/web/views/top-a.html" />
         <option value="$PROJECT_DIR$/web/views/meizi.html" />
-        <option value="$PROJECT_DIR$/web/statics/css/common.css" />
       </list>
     </option>
   </component>
@@ -293,6 +293,108 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="includes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -306,6 +408,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programs\wamp\www\meizizhi\web\statics\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\programs\wamp\www\meizizhi\web\admin\views" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
@@ -314,26 +424,44 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" name="Default" comment="" />
+      <changelist id="f2fb19f0-053b-44d3-9f51-c4e50d112c22" name="New changelist" comment="" />
       <created>1405562665387</created>
       <updated>1405562665387</updated>
     </task>
+    <task id="LOCAL-00001" summary="页面开发">
+      <created>1405583867030</created>
+      <updated>1405583867030</updated>
+    </task>
+    <task id="LOCAL-00002" summary="页面开发">
+      <created>1405583977345</created>
+      <updated>1405583977345</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="738" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928944" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67071056" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -390,7 +518,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="页面开发" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -404,101 +532,50 @@
     <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="页面开发" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/block.rnc">
+    <entry file="file://$PROJECT_DIR$/includes/admin/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="179" column="22" selection-start="3387" selection-end="3387" vertical-scroll-proportion="0.33272728">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/view.html">
+    <entry file="file://$PROJECT_DIR$/includes/admin/AdminService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="74" selection-start="459" selection-end="474" vertical-scroll-proportion="-6.387097">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/footer-a.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="40" selection-start="40" selection-end="40" vertical-scroll-proportion="-0.0">
+        <state line="9" column="18" selection-start="173" selection-end="185" vertical-scroll-proportion="-2.1290324">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="3" selection-start="166" selection-end="166" vertical-scroll-proportion="-4.967742">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/DbConfig.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="22" selection-start="224" selection-end="224" vertical-scroll-proportion="-6.096774">
-          <folding>
-            <element signature="e#6#109#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/dao/MySQL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="43" selection-start="2479" selection-end="2479" vertical-scroll-proportion="-6.612903">
-          <folding>
-            <element signature="e#6#825#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/Config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="16" selection-start="498" selection-end="498" vertical-scroll-proportion="-10.645162">
+        <state line="10" column="12" selection-start="228" selection-end="232" vertical-scroll-proportion="-7.096774">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/service/ImgService.php">
+    <entry file="file://$PROJECT_DIR$/web/admin/img.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="30" selection-start="539" selection-end="539" vertical-scroll-proportion="-8.5161295">
-          <folding>
-            <element signature="e#6#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="359" selection-end="359" vertical-scroll-proportion="-8.5161295">
+        <state line="13" column="18" selection-start="428" selection-end="428" vertical-scroll-proportion="-9.225806">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/meizi.php">
+    <entry file="file://$PROJECT_DIR$/web/admin/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="25" selection-start="466" selection-end="466" vertical-scroll-proportion="-10.354838">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/index.html">
+    <entry file="file://$PROJECT_DIR$/web/admin/views/top.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="36" selection-start="618" selection-end="618" vertical-scroll-proportion="-9.935484">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/top-a.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="52" selection-start="816" selection-end="821" vertical-scroll-proportion="-0.7096774">
+        <state line="15" column="53" selection-start="805" selection-end="805" vertical-scroll-proportion="-10.354838">
           <folding>
             <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#a#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -506,29 +583,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/meizi.html">
+    <entry file="file://$PROJECT_DIR$/web/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="96" selection-start="277" selection-end="277" vertical-scroll-proportion="-2.8387096">
+        <state line="8" column="0" selection-start="166" selection-end="438" vertical-scroll-proportion="-5.677419">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/views/img.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="9" selection-start="2073" selection-end="2073" vertical-scroll-proportion="-31.225807">
           <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#h2#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/statics/plugin/bootstrap/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4465" column="0" selection-start="89695" selection-end="89695" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="31" selection-start="1951" selection-end="1957" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/statics/img/0a7b22a80fcb540.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/statics/img/dbdfbcebd43deaf.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/embed.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="16" selection-start="701" selection-end="731" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/statics/css/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="26" selection-start="570" selection-end="570" vertical-scroll-proportion="0.375">
+        <state line="28" column="19" selection-start="663" selection-end="663" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/top-a.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="0" selection-start="3294" selection-end="3294" vertical-scroll-proportion="-17.741936">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/meizi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="49" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.3181818">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#span#0;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#0;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
