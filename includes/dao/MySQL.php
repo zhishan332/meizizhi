@@ -1,542 +1,379 @@
 <?php
-/*----------------------------------------------------------------------
-*MySQL操作类
-*----------------------------------------------------------------------
-*Author: justmepzy(justmepzy@gmail.com)
-*----------------------------------------------------------------------
+/*
+* Copyright (C) 2012
+* Ed Rackham (http://github.com/a1phanumeric/PHP-MySQL-Class)
+* Changes to Version 0.8.1 copyright (C) 2013
+* Christopher Harms (http://github.com/neurotroph)
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
-class MySQL{
 
-    private $db_mysql_hostname;
-    private $db_mysql_username;
-    private $db_mysql_password;
-    private $db_mysql_database;
-    private $db_mysql_port;
-    private $db_mysql_charset;
-    private $query_list = array();
+// MySQL Class v0.8.1
+require_once dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR.'DbConfig.php';
+class MySQL {
 
-    //查询次数
-    protected $conn;
-    //事务指令数
-    protected $transTimes = 0;
-    //返回或者影响记录数
-    protected $numRows = 0;
-    //错误信息
-    protected $error = '';
-    //
-    public $query_count = 0;
-    //查询开始时间
-    public $query_start_time;
-    //当前查询ID
-    protected $queryID;
+// Base variables
+    var $lastError; // Holds the last error
+    var $lastQuery; // Holds the last query
+    var $result; // Holds the MySQL query result
+    var $records; // Holds the total number of records returned
+    var $affected; // Holds the total number of records affected
+    var $rawResults; // Holds raw 'arrayed' results
+    var $arrayedResult; // Holds an array of the result
 
-    //当前连接
-    public function __construct($hostname_or_conf,$username,$password,$database,$port = '3306',$char = 'utf8')
-    {
-        if(is_array($hostname_or_conf))
-        {
-            $this->db_mysql_hostname = $hostname_or_conf['hostname'];
-            $this->db_mysql_username = $hostname_or_conf['username'];
-            $this->db_mysql_password = $hostname_or_conf['password'];
-            $this->db_mysql_database = $hostname_or_conf['database'];
-            $this->db_mysql_port = isset($hostname_or_conf['port'])?$hostname_or_conf['port']:'3306';
-            $this->db_mysql_charset = isset($hostname_or_conf['charset'])?$hostname_or_conf['charset']:'utf8';
+    var $hostname; // MySQL Hostname
+    var $username; // MySQL Username
+    var $password; // MySQL Password
+    var $database; // MySQL Database
 
+    var $databaseLink; // Database Connection Link
+
+
+
+    /* *******************
+    * Class Constructor *
+    * *******************/
+
+    function __construct($database=DB_NAME, $username=DB_USER, $password=DB_PASSWORD, $hostname=DB_HOST, $port=DB_PORT){
+        $this->database = $database;
+        $this->username = $username;
+        $this->password = $password;
+        $this->hostname = $hostname.':'.$port;
+
+        $this->Connect();
+    }
+
+
+
+    /* *******************
+    * Private Functions *
+    * *******************/
+
+// Connects class to database
+// $persistant (boolean) - Use persistant connection?
+    private function Connect($persistant = false){
+        $this->CloseConnection();
+
+        if($persistant){
+            $this->databaseLink = mysql_pconnect($this->hostname, $this->username, $this->password);
+        }else{
+            $this->databaseLink = mysql_connect($this->hostname, $this->username, $this->password);
         }
-        elseif(!empty($hostname_or_conf)||!empty($username)||!empty($password)||!empty($database))
-        {
-            $this->db_mysql_hostname = $hostname_or_conf;
-            $this->db_mysql_username = $username;
-            $this->db_mysql_password = $password;
-            $this->db_mysql_database = $database;
-            $this->db_mysql_port = $port;
-            $this->db_mysql_charset = $char;
-        }
-        else
-        {
-            die('configuration error.');
-        }
-        $this->connect();
-    }
-
-    private function connect()
-    {
-        $server = $this->db_mysql_hostname.':'.$this->db_mysql_port;
-        $this->conn = mysql_connect($server,$this->db_mysql_username,$this->db_mysql_password,true) or die('Connect MySQL DB error!');
-        mysql_select_db($this->db_mysql_database,$this->conn) or die('select db error!');
-        mysql_query("set names " . $this->db_mysql_charset, $this->conn);
-    }
-    /**
-     *----------------------------------------------------------
-     * 设置数据对象值
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     *table,where,order,limit,data,field,join,group,having
-     *----------------------------------------------------------
-     */
-    public function table($table)
-    {
-        $this->query_list['table'] = $table;
-        return $this;
-    }
-
-    public function where($where)
-    {
-        $this->query_list['where'] = $where;
-        return $this;
-    }
-
-    public function order($order)
-    {
-        $this->query_list['order'] = $order;
-        return $this;
-    }
-
-    public function limit($offset,$length)
-    {
-        if(!isset($length))
-        {
-            $length = $offset;
-            $offset = 0;
-        }
-        $this->query_list['limit'] = 'limit '.$offset.','.$length;
-        return $this;
-    }
-
-    public function data($data)
-    {
-        /*
-    if(is_object($data))
-    {
-    $data = get_object_vars($data);
-    }
-    elseif (is_string($data))
-    {
-    parse_str($data,$data);
-    }
-    elseif(!is_array($data))
-    {
-    //Log:DATA_TYPE_INVALID
-    }
-    */
-        $this->query_list['data'] = $data;
-        return $this;
-    }
-
-    public function field($fields)
-    {
-        $this->query_list['fields'] = $fields;
-        return $this;
-    }
-
-    public function join($join)
-    {
-        $this->query_list['join'] = $join;
-        return $this;
-    }
-
-    public function group($group)
-    {
-        $this->query_list['group'] = $group;
-        return $this;
-    }
-
-    public function having($having)
-    {
-        $this->query_list['having'] = $having;
-        return $this;
-    }
-
-    /**
-     *----------------------------------------------------------
-     * 查询
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @param
-     *----------------------------------------------------------
-     */
-    public function select()
-    {
-        $select_sql = 'select ';
-        $fields = isset($this->query_list['fields'])?$this->query_list['fields']:'*';
-        $select_sql .= $fields;
-        $select_sql .= ' from `'.$this->query_list['table'].'` ';
-
-        isset($this->query_list['join'])?($select_sql.=$this->query_list['join']):'';
-        isset($this->query_list['where'])?($select_sql.=' where '.$this->query_list['where']):'';
-        isset($this->query_list['group'])?($select_sql.=' group by'.$this->query_list['group']):'';
-        isset($this->query_list['having'])?($select_sql.=' mysql having '.$this->query_list['having']):'';
-        isset($this->query_list['order'])?($select_sql.=' order by '.$this->query_list['order']):'';
-        isset($this->query_list['limit'])?($select_sql.=' '.$this->query_list['limit']):'';
-
-        return $this->query($select_sql);
-    }
-    /**
-     *----------------------------------------------------------
-     * 增加
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @param
-     *----------------------------------------------------------
-     */
-    public function add()
-    {
-        $add_sql = 'insert into `'.$this->query_list['table'].'` (';
-
-        $data = $this->query_list['data'];
-        $value = $field = '';
-        foreach($data as $k=>$v)
-        {
-            $field .= '`'.$k.'`,';
-            if(is_numeric($v))
-                $value .= $v.',';
-            else
-                $value .= '\''.$v.'\',';
-        }
-        $add_sql .= rtrim($field,',').') values ('.rtrim($value,',').')';
-
-        return $this->execute($add_sql);
-    }
-    /**
-     *----------------------------------------------------------
-     * 删除
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @param
-     *----------------------------------------------------------
-     */
-    public function delete()
-    {
-        $del_sql = 'delete from `'.$this->query_list['table'].'` where '.$this->query_list['where'];
-
-        if(isset($this->query_list['order']))
-            $del_sql .= 'order by '.$this->query_list['order'];
-        if(isset($this->query_list['limit']))
-            $del_sql .= ' '.$this->query_list['limit'];
-
-        return $this->execute($del_sql);
-
-    }
-    /**
-     *----------------------------------------------------------
-     * 更新
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @param
-     *----------------------------------------------------------
-     */
-    public function update()
-    {
-        $update_sql = 'update `'.$this->query_list['table'].'` set ';
-        $data = $this->query_list['data'];
-
-        foreach($data as $k=>$v)
-        {
-            if(is_numeric($v))
-                $update_sql .= '`'.$k.'` ='.$v.',';
-            else
-                $update_sql .= '`'.$k.'` =\''.$v.'\',';
-        }
-        $update_sql = rtrim($update_sql,',');
-        if(isset($this->query_list['where']))
-            $update_sql .= ' where '.$this->query_list['where'];
-        if(isset($this->query_list['order']))
-            $update_sql .= ' order by '.$this->query_list['order'];
-        if(isset($this->query_list['limit']))
-            $update_sql .= ' '.$this->query_list['limit'];
-
-        return $this->execute($update_sql);
-    }
-    /**
-     *----------------------------------------------------------
-     * 执行查询 返回数据集
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @param string $sql sql指令
-     */
-    public function query($sql)
-    {
-        if ( !$this->conn )
-            return false;
-        $this->queryStr = $sql;
-        //释放前次的查询结果
-        if ( $this->queryID )
-        {
-            $this->free();
-        }
-
-        $this->query_start_time = microtime(true);
-
-        $this->queryID = mysql_query($sql, $this->conn);
-        $this->query_count**;
-        if ( false === $this->queryID )
-        {
-            $this->error();
-            return false;
-        } else
-        {
-            $this->numRows = mysql_num_rows($this->queryID);
-            return $this->getAll();
-        }
-    }
-    /**
-     *----------------------------------------------------------
-     * 执行语句
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @param string $sql sql指令
-     *----------------------------------------------------------
-     */
-    public function execute($sql)
-    {
-        if ( !$this->conn )
-            return false;
-        $this->queryStr = $sql;
-        //释放前次的查询结果
-        if ( $this->queryID )
-        {
-            $this->free();
-        }
-
-        $this->query_start_time = microtime(true);
-
-        $result = mysql_query($sql, $this->conn) ;
-        $this->query_count**;
-        if ( false === $result)
-        {
-            $this->error();
+        mysql_query("SET NAMES " . DB_SET);
+        if(!$this->databaseLink){
+            $this->lastError = 'Could not connect to server: ' . mysql_error($this->databaseLink);
             return false;
         }
-        else
-        {
-            $this->numRows = mysql_affected_rows($this->conn);
-            return $this->numRows;
-        }
-    }
-    /**
-     *----------------------------------------------------------
-     * 获得所有的查询数据
-     *----------------------------------------------------------
-     * @access private
-     *----------------------------------------------------------
-     * @return array
-     */
-    private function getAll()
-    {
-        //返回数据集
-        $result = array();
-        if($this->numRows >0)
-        {
-            while($row = mysql_fetch_assoc($this->queryID))
-            {
-                $result[] = $row;
-            }
-            mysql_data_seek($this->queryID,0);
-        }
-        return $result;
-    }
-    /**
-     *----------------------------------------------------------
-     * 取得数据表的字段信息
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     */
-    public function getFields($tableName)
-    {
-        $result = $this->query('SHOW COLUMNS FROM `'.$tableName.'`');
-        $info = array();
-        if($result)
-        {
-            foreach ($result as $key => $val)
-            {
-                $info[$val['Field']] = array(
-                    'name' => $val['Field'],
-                    'type' => $val['Type'],
-                    'notnull' => (bool) ($val['Null'] === ''), // not null is empty, null is yes
-                    'default' => $val['Default'],
-                    'primary' => (strtolower($val['Key']) == 'pri'),
-                    'autoinc' => (strtolower($val['Extra']) == 'auto_increment'),
-                );
-            }
-        }
-        return $info;
-    }
-    /**
-     *----------------------------------------------------------
-     * 取得数据库的表信息
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     */
-    public function getTables($dbName='')
-    {
-        if(!empty($dbName))
-        {
-            $sql = 'SHOW TABLES FROM '.$dbName;
-        }
-        else
-        {
-            $sql = 'SHOW TABLES ';
-        }
-        $result = $this->query($sql);
-        $info = array();
-        foreach ($result as $key => $val)
-        {
-            $info[$key] = current($val);
-        }
-        return $info;
-    }
 
-    /**
-     *----------------------------------------------------------
-     * 最后次操作的ID
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @param
-     *----------------------------------------------------------
-     */
-    public function last_insert_id()
-    {
-        return mysql_insert_id($this->conn);
-    }
-    /**
-     * 执行一条带有结果集计数的
-     */
-    public function count($sql)
-    {
-        return $this->execute($sql);
-    }
-    /**
-     *----------------------------------------------------------
-     * 启动事务
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @return void
-     *----------------------------------------------------------
-     */
-    public function startTrans()
-    {
-        if ($this->transTimes == 0)
-        {
-            mysql_query('START TRANSACTION', $this->conn);
-        }
-        $this->transTimes**;
-        return ;
-    }
-
-    /**
-     *----------------------------------------------------------
-     * 提交事务
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @return boolen
-     *----------------------------------------------------------
-     */
-    public function commit()
-    {
-        if ($this->transTimes > 0)
-        {
-            $result = mysql_query('COMMIT', $this->conn);
-            $this->transTimes = 0;
-            if(!$result)
-            {
-                throw new Exception($this->error());
-            }
+        if(!$this->UseDB()){
+            $this->lastError = 'Could not connect to database: ' . mysql_error($this->databaseLink);
+            return false;
         }
         return true;
     }
 
-    /**
-     *----------------------------------------------------------
-     * 事务回滚
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @return boolen
-     *----------------------------------------------------------
-     */
-    public function rollback()
-    {
-        if ($this->transTimes > 0)
-        {
-            $result = mysql_query('ROLLBACK', $this->conn);
-            $this->transTimes = 0;
-            if(!$result)
-            {
-                throw new Exception($this->error());
+
+// Select database to use
+    private function UseDB(){
+        if(!mysql_select_db($this->database, $this->databaseLink)){
+            $this->lastError = 'Cannot select database: ' . mysql_error($this->databaseLink);
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+
+// Performs a 'mysql_real_escape_string' on the entire array/string
+    private function SecureData($data, $types){
+        if(is_array($data)){
+            $i = 0;
+            foreach($data as $key=>$val){
+                if(!is_array($data[$key])){
+                    $data[$key] = $this->CleanData($data[$key], $types[$i]);
+                    $data[$key] = mysql_real_escape_string($data[$key], $this->databaseLink);
+                    $i++;
+                }
+            }
+        }else{
+            $data = $this->CleanData($data, $types);
+            $data = mysql_real_escape_string($data, $this->databaseLink);
+        }
+        return $data;
+    }
+
+    // clean the variable with given types
+    // possible types: none, str, int, float, bool, datetime, ts2dt (given timestamp convert to mysql datetime)
+    // bonus types: hexcolor, email
+    private function CleanData($data, $type = ''){
+        switch($type) {
+            case 'none':
+                $data = $data;
+                break;
+            case 'str':
+                $data = settype( $data, 'string');
+                break;
+            case 'int':
+                $data = settype( $data, 'integer');
+                break;
+            case 'float':
+                $data = settype( $data, 'float');
+                break;
+            case 'bool':
+                $data = settype( $data, 'boolean');
+                break;
+            // Y-m-d H:i:s
+            // 2014-01-01 12:30:30
+            case 'datetime':
+                $data = trim( $data );
+                $data = preg_replace('/[^\d\-: ]/i', '', $data);
+                preg_match( '/^([\d]{4}-[\d]{2}-[\d]{2} [\d]{2}:[\d]{2}:[\d]{2})$/', $data, $matches );
+                $data = $matches[1];
+                break;
+            case 'ts2dt':
+                $data = settype( $data, 'integer');
+                $data = date('Y-m-d H:i:s', $data);
+                break;
+
+            // bonus types
+            case 'hexcolor':
+                preg_match( '/(#[0-9abcdef]{6})/i', $data, $matches );
+                $data = $matches[1];
+                break;
+            case 'email':
+                $data = filter_var($data, FILTER_VALIDATE_EMAIL);
+                break;
+            default:
+                $data = '';
+                break;
+        }
+        return $data;
+    }
+
+
+
+    /* ******************
+* Public Functions *
+* ******************/
+
+    // Executes MySQL query
+    public function executeSQL($query){
+        $this->lastQuery = $query;
+        if($this->result = mysql_query($query, $this->databaseLink)){
+            if (gettype($this->result) === 'resource') {
+                $this->records = @mysql_num_rows($this->result);
+                $this->affected = @mysql_affected_rows($this->databaseLink);
+            } else {
+                $this->records = 0;
+                $this->affected = 0;
+            }
+
+            if($this->records > 0){
+                $this->arrayResults();
+                return $this->arrayedResult;
+            }else{
+                return true;
+            }
+
+        }else{
+            $this->lastError = mysql_error($this->databaseLink);
+            return false;
+        }
+    }
+
+
+    // Adds a record to the database based on the array key names
+    public function insert($table, $vars, $exclude = '', $datatypes){
+
+        // Catch Exclusions
+        if($exclude == ''){
+            $exclude = array();
+        }
+
+        array_push($exclude, 'MAX_FILE_SIZE'); // Automatically exclude this one
+
+        // Prepare Variables
+        $vars = $this->SecureData($vars, $datatypes);
+
+        $query = "INSERT INTO `{$table}` SET ";
+        foreach($vars as $key=>$value){
+            if(in_array($key, $exclude)){
+                continue;
+            }
+            $query .= "`{$key}` = '{$value}', ";
+        }
+
+        $query = trim($query, ', ');
+
+        return $this->executeSQL($query);
+    }
+
+    // Deletes a record from the database
+    public function delete($table, $where='', $limit='', $like=false, $wheretypes){
+        $query = "DELETE FROM `{$table}` WHERE ";
+        if(is_array($where) && $where != ''){
+            // Prepare Variables
+            $where = $this->SecureData($where, $wheretypes);
+
+            foreach($where as $key=>$value){
+                if($like){
+                    $query .= "`{$key}` LIKE '%{$value}%' AND ";
+                }else{
+                    $query .= "`{$key}` = '{$value}' AND ";
+                }
+            }
+
+            $query = substr($query, 0, -5);
+        }
+
+        if($limit != ''){
+            $query .= ' LIMIT ' . $limit;
+        }
+
+        return $this->executeSQL($query);
+    }
+
+
+    // Gets a single row from $from where $where is true
+    public function select($from, $where='', $orderBy='', $limit='', $like=false, $operand='AND',$cols='*', $wheretypes){
+        // Catch Exceptions
+        if(trim($from) == ''){
+            return false;
+        }
+
+        $query = "SELECT {$cols} FROM `{$from}` WHERE ";
+
+        if(is_array($where) && $where != ''){
+            // Prepare Variables
+            $where = $this->SecureData($where, $wheretypes);
+
+            foreach($where as $key=>$value){
+                if($like){
+                    $query .= "`{$key}` LIKE '%{$value}%' {$operand} ";
+                }else{
+                    $query .= "`{$key}` = '{$value}' {$operand} ";
+                }
+            }
+
+            $query = substr($query, 0, -(strlen($operand)+2));
+
+        }else{
+            $query = substr($query, 0, -6);
+        }
+
+        if($orderBy != ''){
+            $query .= ' ORDER BY ' . $orderBy;
+        }
+
+        if($limit != ''){
+            $query .= ' LIMIT ' . $limit;
+        }
+
+        return $this->executeSQL($query);
+
+    }
+
+    // Updates a record in the database based on WHERE
+    public function update($table, $set, $where, $exclude = '', $datatypes, $wheretypes){
+        // Catch Exceptions
+        if(trim($table) == '' || !is_array($set) || !is_array($where)){
+            return false;
+        }
+        if($exclude == ''){
+            $exclude = array();
+        }
+
+        array_push($exclude, 'MAX_FILE_SIZE'); // Automatically exclude this one
+
+        $set = $this->SecureData($set, $datatypes);
+        $where = $this->SecureData($where,$wheretypes);
+
+        // SET
+
+        $query = "UPDATE `{$table}` SET ";
+
+        foreach($set as $key=>$value){
+            if(in_array($key, $exclude)){
+                continue;
+            }
+            $query .= "`{$key}` = '{$value}', ";
+        }
+
+        $query = substr($query, 0, -2);
+
+        // WHERE
+
+        $query .= ' WHERE ';
+
+        foreach($where as $key=>$value){
+            $query .= "`{$key}` = '{$value}' AND ";
+        }
+
+        $query = substr($query, 0, -5);
+
+        return $this->executeSQL($query);
+    }
+
+    // 'Arrays' a single result
+    public function arrayResult(){
+        $this->arrayedResult = mysql_fetch_assoc($this->result) or die (mysql_error($this->databaseLink));
+        return $this->arrayedResult;
+    }
+
+    // 'Arrays' multiple result
+    public function arrayResults(){
+
+        if($this->records == 1){
+            return $this->arrayResult();
+        }
+
+        $this->arrayedResult = array();
+        while ($data = mysql_fetch_assoc($this->result)){
+            $this->arrayedResult[] = $data;
+        }
+        return $this->arrayedResult;
+    }
+
+    // 'Arrays' multiple results with a key
+    public function arrayResultsWithKey($key='id'){
+        if(isset($this->arrayedResult)){
+            unset($this->arrayedResult);
+        }
+        $this->arrayedResult = array();
+        while($row = mysql_fetch_assoc($this->result)){
+            foreach($row as $theKey => $theValue){
+                $this->arrayedResult[$row[$key]][$theKey] = $theValue;
             }
         }
-        return true;
+        return $this->arrayedResult;
     }
-    /**
-     *----------------------------------------------------------
-     * 错误信息
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @param
-     *----------------------------------------------------------
-     */
-    public function error()
-    {
-        $this->error = mysql_error($this->conn);
-        if('' != $this->queryStr)
-        {
-            $this->error .= "\n [ SQL语句 ] : ".$this->queryStr;
+
+    // Returns last insert ID
+    public function lastInsertID(){
+        return mysql_insert_id();
+    }
+
+    // Return number of rows
+    public function countRows($from, $where=''){
+        $result = $this->select($from, $where, '', '', false, 'AND','count(*)');
+        return $result["count(*)"];
+    }
+
+    // Closes the connections
+    public function closeConnection(){
+        if($this->databaseLink){
+            mysql_close($this->databaseLink);
         }
-        return $this->error;
-    }
-    /**
-     *----------------------------------------------------------
-     * 释放查询结果
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     */
-    public function free()
-    {
-        @mysql_free_result($this->queryID);
-        $this->queryID = 0;
-        $this->query_list = null;
-    }
-    /**
-     *----------------------------------------------------------
-     * 关闭连接
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     * @param
-     *----------------------------------------------------------
-     */
-    function close()
-    {
-        if ($this->conn && !mysql_close($this->conn))
-        {
-            throw new Exception($this->error());
-        }
-        $this->conn = 0;
-        $this->query_count = 0;
-    }
-    /**
-     *----------------------------------------------------------
-     * 析构方法
-     *----------------------------------------------------------
-     * @access public
-     *----------------------------------------------------------
-     */
-    function __destruct()
-    {
-        $this->close();
     }
 }

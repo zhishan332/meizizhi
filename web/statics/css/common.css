@@ -11,18 +11,18 @@ body, ul, li, ol, dl, dd, dt, caption, pre, blockquote, input, textarea, img, sm
 .bs-docs-footer {
     border-top: 1px solid #e5e5e5;
     color: #777;
-    margin-top: 60px;
+    margin-top: 40px;
     padding-bottom: 10px;
     padding-top: 20px;
     text-align: center;
 }
 .img-box{
-    width: 960px;
-    padding: 10px;
+    width: 100%;
+    padding: 5px 5px 1px 5px;
 }
 .img-box img{
     text-align: center;
-    max-width: 920px;
+    max-width: 90%;
     max-height:500px;
     padding: 10px;
 
