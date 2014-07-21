@@ -14,7 +14,7 @@ class ImgService
 
     static function find($start = 0, $limit = DEFAULT_LIMIT)
     {
-        $sql = "select id,title,url,description,udate,imgnum,imgurl from page order by udate limit  " . $start . "," . $limit;
+        $sql = "select id,pageid,title,viewnum,cover,imgnum,status,cuserid,cusername,cdate,udate from page where status=200 order by udate limit  " . $start . "," . $limit;
         $mysql = new MySQL();
         $res = $mysql->executeSQL($sql);
         $mysql->closeConnection();

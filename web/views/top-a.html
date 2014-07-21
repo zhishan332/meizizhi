@@ -40,7 +40,7 @@
                     <li>
                         <form role="form" class="navbar-form navbar-right">
                             <div class="form-group">
-                                <input type="text" id="username" class="form-control" placeholder="邮箱或手机号">
+                                <input type="text" id="username" class="form-control" placeholder="用户名或邮箱或手机号">
                             </div>
                             <div class="form-group">
                                 <input type="password" id="password" class="form-control" placeholder="密码">
@@ -66,40 +66,11 @@
     </div>
 </div>
 <script type="text/javascript">
-    var loginhtml, validation = function () {
-        //验证写在这
-        $('.BB_button').on('click', function () {
-            return false; //此处只作演示
-        });
-    };
-    var page = {};
-    layer.login = function (options) {
-        options = options || {};
-        $.layer({
-            type: 1,
-            title: '用户登录',
-            offset: [($(window).height() - 290) / 2 + 'px', ''],
-            border: [5, 0.5, '#666'],
-            area: ['450px', '290px'],
-            shadeClose: true,
-            page: page
-        });
-    };
     $(document).ready(function () {
         $('#signRegBtn').click(function () {
             var username = $('#username').val();
             if (!username) {
-                //如果已经请求过，则直接读取缓存节点
-                if (loginhtml) {
-                    page.html = loginhtml;
-                } else {
-                    page.url = 'login.php'
-                    page.ok = function (datas) {
-                        loginhtml = datas; //保存登录节点
-                        validation();
-                    }
-                }
-                layer.login();
+                window.location.href="login.php";
             } else {
 
             }
