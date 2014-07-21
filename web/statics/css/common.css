@@ -23,21 +23,29 @@ body, ul, li, ol, dl, dd, dt, caption, pre, blockquote, input, textarea, img, sm
     padding: 5px 5px 1px 5px;
 }
 
-.img-box img {
+.list-img {
     text-align: center;
     max-width: 90%;
     max-height: 700px;
     padding: 10px;
+    cursor: pointer;
 }
 
 .list-img-ul {
     list-style: none;
 }
-
-.list-img {
-    cursor: pointer;
-}
 .list-img-hide {
     cursor: pointer;
     display: none;
+}
+.face{
+    background-image: url("../img/smiley24.png?id=20140717181900");
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+.face:hover{
+    background-image: url("../img/smiley24_2.png?id=20140717181900");
 }

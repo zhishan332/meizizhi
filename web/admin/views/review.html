@@ -1,0 +1,72 @@
+<div class="container">
+    <div style="height: auto;width: 100%;">
+        <div class="input-group" style="padding: 5px 5px 5px 0;float:left;width: 300px">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+          </span>
+            <input type="text" class="form-control" >
+        </div>
+        <!-- /input-group -->
+        <div class="btn-group" style="padding: 5px;float: left;">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                审核状态-全部 <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="review.php?status=1">全部</a></li>
+                <li><a href="review.php?status=2">未审核</a></li>
+                <li><a href="review.php?status=3">已审核</a></li>
+            </ul>
+        </div>
+        <form class="navbar-form navbar-left" role="search" style="margin-top:5px!important;">
+            <div class="form-group" style="float: left;">
+                <input type="text" style="width: 90px" class="form-control" placeholder="开始主键">
+                <input type="text" style="width: 90px" class="form-control" placeholder="结束主键">
+            </div>
+            <button type="submit" class="btn btn-default" style="float: left;">导 出</button>
+        </form>
+
+    </div>
+    <div style="clear: both"></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <input type="text" class="form-control" placeholder="标题" value="彪悍的人生不需要解释，太衰了最近">
+                        <span class="label label-default">主键：1</span>
+                        <span class="label label-primary">标题字数：20</span>
+                        <span class="label label-success">审核通过</span>
+                        <span class="label label-warning">待审核</span>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <?php for($i=0;$i<3;$i++){?>
+                    <div style="padding: 5px">
+                        <span class="label label-warning">1</span>
+                        <img src="<?php echo STATICROOT;?>/img/dbdfbcebd43deaf.jpg"
+                             style="max-width: 800px;max-height: 500px">
+                        <button type="button" class="btn btn-danger">删除</button>
+                    </div>
+                    <?php }?>
+                    <div class="btn-group" style="float: right">
+                        <button type="button" class="btn btn-danger">删除</button>
+                        <button type="button" class="btn btn-success">保存并发布</button>
+                        <button type="button" class="btn btn-warning">保存并发到首页</button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div style="clear: both"></div>
+    <ul class="pagination  pagination-lg" style="margin: 0;">
+        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+    </ul>
+</div>
+</body>
+</html>
