@@ -334,9 +334,9 @@ class MySQL {
     // 'Arrays' multiple result
     public function arrayResults(){
 
-        if($this->records == 1){
-            return $this->arrayResult();
-        }
+//        if($this->records == 1){
+//            return $this->arrayResult();
+//        }
 
         $this->arrayedResult = array();
         while ($data = mysql_fetch_assoc($this->result)){
@@ -367,7 +367,7 @@ class MySQL {
     // Return number of rows
     public function countRows($from, $where=''){
         $result = $this->select($from, $where, '', '', false, 'AND','count(*)');
-        return $result["count(*)"];
+        return $result[0]["count(*)"];
     }
 
     // Closes the connections

@@ -16,7 +16,7 @@ function imgQuery($req)
     $imgs = array();
     $imgs['status']=1;
     $imgs['msg']="";
-    $imgs['title']=$req['title'];
+    $imgs['title']="";
     $imgs['id']=$pageid;
     $imgs['start']=0;
     foreach ($res as $img) {

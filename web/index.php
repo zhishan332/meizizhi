@@ -7,7 +7,7 @@
  * To change this template use File | Settings | File Templates.
  */
 require_once '..' . DIRECTORY_SEPARATOR . 'includes'.DIRECTORY_SEPARATOR . 'Config.php';
-require_once SERVCIEROOT . 'ImgService.php';
+require_once SERVCIEROOT . 'PageService.php';
 
 $page_title="首页";
 include(ROOT . "/web/views/top-a.html");
