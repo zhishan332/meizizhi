@@ -12,5 +12,6 @@ define("ROOT", dirname(dirname(__FILE__)));
 define("PATH", DIRECTORY_SEPARATOR);
 define("SERVCIEROOT",(dirname(dirname(__FILE__)) . PATH . 'includes' . PATH . 'service' . PATH ));
 define("STATICROOT", "http://127.0.0.1:9999/meizizhi/web/statics");
+define("STATICROOT2", "http://127.0.0.1:8181/hunter/imgs");
 //查询Limit默认条数
 define('DEFAULT_LIMIT', 10);
