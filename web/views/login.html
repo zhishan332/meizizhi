@@ -1,4 +1,170 @@
+<div class="container" style="margin-top: 60px;width: 600px">
+    <div class="panel panel-success">
+        <!-- Default panel contents -->
+        <div class="panel-heading">欢迎新用户注册</div>
+        <div class="panel-body" style="text-align: center">
+            <form role="form" class="form-horizontal">
+                <div class="form-group">
+                    <label for="username" class="col-sm-3 control-label">用户名<span style="color: red">*</span>：</label>
 
-ddd
-</body>
-</html>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="username" id="username"
+                               placeholder="作为显示的昵称，不作为登录使用" title="作为显示的昵称，不作为登录使用">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">邮箱<span style="color: red">*</span>：</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="email" id="email"
+                               placeholder="邮箱作为登录使用" title="邮箱作为登录使用">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="tel" class="col-sm-3 control-label">手机号：</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="tel" id="tel"
+                               placeholder="可以使用手机号直接登录" title="可以使用手机号直接登录">
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">密码<span style="color: red">*</span>：</label>
+
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" name="password" id="password"
+                               placeholder="密码" title="密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password2" class="col-sm-3 control-label">密码确认<span style="color: red">*</span>：</label>
+
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" name="password2" id="password2"
+                               placeholder="密码确认" title="密码确认">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password2" class="col-sm-3 control-label">验证码<span style="color: red">*</span>：</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" style="width: 150px;float: left" id="code_cp"
+                               maxlength="4"/>
+                        <img src="../includes/captcha/code_gg.php" style="float: left;margin-left: 20px" id="getcode_gg"
+                             title="看不清，点击换一张" align="absmiddle">
+                    </div>
+                </div>
+                <button type="button" id="regBtn" class="btn btn-success btn-lg"> 提 交</button>
+            </form>
+            <div class="alert alert-danger" role="alert"  id="alert-box" style="display: none;margin-top: 5px;margin-bottom: 1px">
+                <strong> <span id="tip"></span></strong>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    var mobilecheck = function(tel){
+        var result = {
+            isMobile:false,
+            number:tel.toString(),
+            operator:'unknown'
+        };
+        if(/^13[5-9]\d{8}$/g.test(tel) ||
+                /^134[0-8]\d{7}$/g.test(tel) ||
+                /^147\d{8}$/g.test(tel) ||
+                /^15[0-27-9]\d{8}$/g.test(tel) ||
+                /^18[2378]\d{8}$/g.test(tel)){
+            result.isMobile = true;
+            result.operator = 'China Mobile';
+        }
+        else if(/^13[0-2]\d{8}$/g.test(tel) ||
+                /^145\d{8}$/g.test(tel) ||
+                /^15[56]\d{8}$/g.test(tel) ||
+                /^18[56]\d{8}$/g.test(tel)){
+            result.isMobile = true;
+            result.operator = 'China Unicom';
+        }
+        else if(/^133\d{8}$/g.test(tel) ||
+                /^153\d{8}$/g.test(tel) ||
+                /^170\d{8}$/g.test(tel) ||
+                /^18[09]\d{8}$/g.test(tel)){
+            result.isMobile = true;
+            result.operator = 'China Telecom';
+        }
+        return result;
+    };
+    $(document).ready(function () {
+        $('#regBtn').click(function () {
+            reg();
+        });
+        //google验证
+        $("#getcode_gg").click(function () {
+            $(this).attr("src", '../includes/captcha/code_gg.php?' + Math.random());
+        });
+    });
+    function reg() {
+        var username = $("input[name='username']").val();
+        var email = $("input[name='email']").val();
+        var tel = $("input[name='tel']").val();
+        var password = $("input[name='password']").val();
+        var password2 = $("input[name='password2']").val();
+        //进行基本检查
+        if(username ==null || ''==username || (username.length<2 || username >10)){
+            $('#alert-box').show();
+            $('#tip').text("用户名不能为空，并且长度在2到10位之间!");
+            return;
+        }
+        if(!emailFormatCheck(email)){
+            $('#alert-box').show();
+            $('#tip').text("邮箱格式不正确!");
+            return;
+        }
+        if(tel!=null && tel !=''){
+            var ck=new mobilecheck(tel);
+            if(!ck.isMobile){
+                $('#alert-box').show();
+                $('#tip').text("不是有效的手机号!");
+                return;
+            }
+        }
+        if(password.length<5 || password.length>15){
+            $('#alert-box').show();
+            $('#tip').text("密码必须在5到15位之间!");
+            return;
+        }
+        if(password != password2){
+            $('#alert-box').show();
+            $('#tip').text("两次输入的密码值不一样!");
+            return;
+        }
+        //进行验证码检查
+        var code_gg = $("#code_cp").val();
+        $.post("../includes/captcha/chk_code.php?act=gg", {code: code_gg}, function (msg) {
+            if (msg == 1) {
+                $('#alert-box').hide();
+                var param={};
+                param.username=username;
+                param.username=username;
+            } else {
+                $('#alert-box').show();
+                $('#tip').text("验证码错误!");
+            }
+        });
+    }
+    /**
+     * email格式校验
+     * @param {Object} email 邮件地址内容
+     */
+    function emailFormatCheck(email){
+        if ((email.length > 128) || (email.length < 6)) {
+            return false;
+        }
+        var format = /^[A-Za-z0-9+]+[A-Za-z0-9\.\_\-+]*@([A-Za-z0-9\-]+\.)+[A-Za-z0-9]+$/;
+        if (!email.match(format)) {
+            return false;
+        }
+        return true;
+    }
+</script>

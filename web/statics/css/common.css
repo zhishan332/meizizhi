@@ -49,3 +49,6 @@ body, ul, li, ol, dl, dd, dt, caption, pre, blockquote, input, textarea, img, sm
 .face:hover{
     background-image: url("../img/smiley24_2.png?id=20140717181900");
 }
+.p-tag{
+    padding: 3px;
+}
