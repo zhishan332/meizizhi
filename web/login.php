@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '..' . DIRECTORY_SEPARATOR . 'includes'.DIRECTORY_SEPARATOR . 'Config.php';
 
 $page_title="登录注册";

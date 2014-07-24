@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>表情解析</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<?php echo STATICROOT;?>/plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="<?php echo STATICROOT;?>/css/common.css" rel="stylesheet" media="screen">
+    <link href="<?php echo STATICROOT;?>/plugin/sinaEmotion/jquery.sinaEmotion-1.3.css" rel="stylesheet" media="screen">
+    <link type="text/css" rel="stylesheet" href="<?php echo STATICROOT;?>/plugin/layer-v1.8.4/skin/layer.ext.css">
+    <script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/jquery-1.8.3.min.js"></script>
+    <!-- Bootstrap -->
+    <script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/bootstrap/js/bootstrap.js"></script>
+    <!-- layer -->
+    <script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/layer-v1.8.4/layer.min.js"></script>
+</head>
+<script type="text/javascript">
+    function jiexi() {
+        $.ajax({
+            dataType: 'jsonp',
+            url: 'https://api.weibo.com/2/emotions.json?source=' + 1362404091,
+            beforeSend: function () {
+            },
+            error: function (request) {
+                alert('<div>加载失败</div>');
+            },
+            success: function (response) {
+                var data = response.data;
+//                var params=[];
+//                for(var i in data){
+//                    params.push(data[i]);
+//                }
+//                alert(params.length);
+                $.ajax({
+                    type: "post",
+                    dataType: 'json',
+                    url: 'emo.php',
+                    data: {dd:JSON.stringify(data)},
+                    beforeSend: function () {
+                    },
+                    error: function (mm) {
+                        alert('处理失败');
+                    },
+                    success: function (mm) {
+                        alert('处理成功:'+mm);
+                    }
+                });
+            }
+        });
+    }
+</script>
+<body>
+<input type="button" value="解析" id="jiexi" onclick="jiexi()">
+</body>
+</html>

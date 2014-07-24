@@ -13,11 +13,10 @@ class UserService
 
     public static function signup($user)
     {
-        $sql = "insert into user(userid,username,email,tel,password,cdate,udate) values()";
         $mysql = new MySQL();
-        $datatypes=array('int','str','str','str','str','int','int');
-        $mysql->insert("user",$user,'',$datatypes);
-        $mysql->closeConnection();
+        $id = $mysql->insert("user", $user);
+        $mysql->closeCon();
+        return $id;
     }
 
     public static function verifyUsername($username)
@@ -25,7 +24,7 @@ class UserService
         $mysql = new MySQL();
         $where = "username='" . $username . "'";
         $total = $mysql->countRows("user", $where);
-        $mysql->closeConnection();
+        $mysql->closeCon();
         return $total > 0;
     }
 
@@ -34,7 +33,7 @@ class UserService
         $mysql = new MySQL();
         $where = "email='" . $email . "'";
         $total = $mysql->countRows("user", $where);
-        $mysql->closeConnection();
+        $mysql->closeCon();
         return $total > 0;
     }
 
@@ -43,7 +42,17 @@ class UserService
         $mysql = new MySQL();
         $where = "tel='" . $tel . "'";
         $total = $mysql->countRows("user", $where);
-        $mysql->closeConnection();
+        $mysql->closeCon();
         return $total > 0;
+    }
+
+    public static function getUser($user)
+    {
+        $mysql = new MySQL();
+        $where = " (email='" . $user['user'] . "' or tel='" . $user['user'] . "') and password='" . $user['password'] . "'";
+        $fd = array("userid,username,email,tel");
+        $res = $mysql->selectOne("user", $where, $fd);
+        $mysql->closeCon();
+        return $res;
     }
 }

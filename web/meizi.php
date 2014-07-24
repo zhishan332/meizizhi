@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: wangq
- * Date: 14-7-16
- * Time: 下午9:18
- * To change this template use File | Settings | File Templates.
- */
 session_start();
 header("Content-type: text/html; charset=utf-8");
 require_once '..' . DIRECTORY_SEPARATOR . 'includes'.DIRECTORY_SEPARATOR . 'Config.php';

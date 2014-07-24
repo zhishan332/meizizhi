@@ -9,7 +9,7 @@
     <link href="<?php echo STATICROOT;?>/css/common.css" rel="stylesheet" media="screen">
     <link href="<?php echo STATICROOT;?>/plugin/sinaEmotion/jquery.sinaEmotion-1.3.css" rel="stylesheet" media="screen">
     <link type="text/css" rel="stylesheet" href="<?php echo STATICROOT;?>/plugin/layer-v1.8.4/skin/layer.ext.css">
-    <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/jquery-1.8.3.min.js"></script>
     <!-- Bootstrap -->
     <script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/bootstrap/js/bootstrap.js"></script>
     <!-- layer -->
@@ -37,6 +37,12 @@
                     <li class="active"><a href="../web/meizi.php">三国志</a></li>
                 </ul>
                 <ul class="nav navbar-nav  navbar-right">
+                    <?php
+                    $user=$_SESSION['user'];
+                    if(empty($user)){
+                    $user_url="login.php";
+                    $user_title="我的地盘";
+                    ?>
                     <li>
                         <form role="form" class="navbar-form navbar-right">
                             <div class="form-group">
@@ -48,16 +54,20 @@
                             <button class="btn btn-success" id="signRegBtn" type="button">登录/注册</button>
                         </form>
                     </li>
+                    <?php }else{
+                        $user_title=$user['username'];
+                        $user_url="userspace.php";
+                    } ?>
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">我的地盘 <span class="caret"></span></a>
+                        <a data-toggle="dropdown" class="dropdown-toggle" style="color: #e4e0f5" href="#">
+                            <?php echo $user_title; ?>
+                            <span class="caret"></span>
+                        </a>
                         <ul role="menu" class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
+                            <!--<li><a href="<?php echo $user_url; ?>">进入空间</a></li>-->
+                            <!--<li><a href="#">账号信息</a></li>-->
+                            <!--<li class="divider"></li>-->
+                            <li><a href="javascript:void(0)" id="logout_btn">注销</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -70,10 +80,66 @@
         $('#signRegBtn').click(function () {
             var username = $('#username').val();
             if (!username) {
-                window.location.href="login.php";
+                window.location.href = "login.php";
             } else {
-
+                login($(this));
             }
         });
+        $('#logout_btn').click(function () {
+           logout($(this));
+        });
+
     });
+    function login(obj) {
+        var username = $('#username').val();
+        var password = $('#password').val();
+        var param = {};
+        param.user = username;
+        param.password = password;
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: '../action/user.php?ac=login',
+            data: param,
+            error: function (resp) {
+                layer.tips('抱歉网络错误，请稍后再试', obj, {guide: 2, time: 2});
+            },
+            success: function (resp) {
+                if (!resp) {
+                    layer.tips('系统故障，请稍后再试', obj, {guide: 2, time: 2});
+                    return;
+                }
+                var status = resp['status'];
+                if (status == 0) {
+                    layer.tips(resp['msg'], obj, {guide: 2, time: 2});
+                } else {
+                    location.reload();
+                }
+            }
+        });
+    }
+    function logout(obj){
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: '../action/user.php?ac=logout',
+            data: {},
+            error: function (resp) {
+                layer.tips('抱歉网络错误，请稍后再试', obj, {guide: 2, time: 2});
+            },
+            success: function (resp) {
+                if (!resp) {
+                    layer.tips('系统故障，请稍后再试', obj, {guide: 2, time: 2});
+                    return;
+                }
+                var status = resp['status'];
+                if (status == 0) {
+                    layer.tips('注销失败，请稍后再试', obj, {guide: 2, time: 2});
+                    return;
+                } else {
+                    location.reload();
+                }
+            }
+        });
+    }
 </script>

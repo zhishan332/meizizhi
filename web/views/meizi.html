@@ -45,7 +45,8 @@
                         <small><?php echo $title;?></small>
                     </a>
                     <span style="float: right;">
-                         <span class="label  label-primary" style="width: 50px;margin-left: 10px;font-weight: normal" title="来自"> <span
+                         <span class="label  label-primary" style="width: 50px;margin-left: 10px;font-weight: normal"
+                               title="来自"> <span
                                  title="来自" class="glyphicon glyphicon-user"></span> <?php echo $cusername;?></span>
                         <span class="label  label-default" style="width: 50px;margin-left: 10px" title="发布时间"> <span
                                 title="发布时间" class="glyphicon glyphicon-time"></span> <?php echo $dateStr;?></span>
@@ -53,7 +54,8 @@
                 </h4>
             </div>
             <div style="width: 100%;height: 40px;padding: 5px 0 0 5px">
-                <a href="javascript:void(0)" id="showdis" style="float: left;width: 200px;margin-top: 10px">评论(22)</a>
+                <a href="javascript:void(0)" class="showdis" id="showdis-<?php echo $pageid; ?>"
+                   style="float: left;width: 200px;margin-top: 10px">评论(22)</a>
 
                 <div role="toolbar" class="btn-toolbar" style="float: right;">
                     <div class="btn-group" style="float: right">
@@ -66,25 +68,23 @@
                             class="glyphicon glyphicon-heart"></span>漂亮(120)</span>
                 </div>
             </div>
-            <ul class="list-group" id="discuss" style="display: none">
+            <ul class="list-group" id="discussbox-<?php echo $pageid; ?>" style="display: none">
                 <li class="list-group-item" style="height: 90px;padding: 5px">
                     <form role="form" class="navbar-form navbar-left"
                           style="padding-left: 0;margin-left: 0;width: 99%;float: left">
                         <div class="form-group">
-                            <input type="text" id="rl_exp_input" class="form-control" style="width: 800px"
+                            <input type="text" id="rl_exp_input-<?php echo $pageid;?>" class="form-control"
+                                   style="width: 800px"
                                    placeholder="最多50个字">
                         </div>
-                        <button class="btn btn-success">评论</button>
+                        <button class="btn btn-success" id="disBtn-<?php echo $pageid;?>">评论</button>
                     </form>
                     <div id="reply" style="float: left;width: 24px">
-                        <span class="face" id="rl_exp_btn"></span>
+                        <span class="face" id="rl_exp_btn-<?php echo $pageid;?>"></span>
                     </div>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item" id="noDis-<?php echo $pageid;?>" style="display: none">
                     还没有评论！
-                </li>
-                <li class="list-group-item">
-                    <p><a href="">最后的辣椒</a>：彩票君有好多福利巷送给大家 <span style="color: #808080">(9分钟前)</span></p>
                 </li>
             </ul>
         </li>
@@ -134,25 +134,51 @@
         });
         $('.list-img').click(function () {
             var id = parseInt($(this).attr('id').split('-')[1]);
-            var param={};
-            param.pageid=id;
-            $.get('../action/page.php?ac=img_query', param, function(json){
-                if(json){
+            var param = {};
+            param.pageid = id;
+            $.get('../action/page.php?ac=img_query', param, function (json) {
+                if (json) {
                     layer.photos({
                         html: '',
                         json: json
                     })
                 }
-            },'json');
+            }, 'json');
         });
-        $('#showdis').click(function () {
+        $('.showdis').click(function () {
             var loadi = layer.load(3); //需关闭加载层时，执行layer.close(loadi)即可
-            $('#discuss').show();
-            $("#rl_exp_input").focus();
-            layer.close(loadi);
+            var pageid = $(this).attr("id").split("-")[1];
+            $('#discussbox-' + pageid).show();
+            $("#rl_exp_input-" + pageid).focus();
+            $.get('../action/discuss.php?ac=query_discuss', {pageid:pageid}, function (resp) {
+                if (resp) {
+                    var status = resp['status'];
+                    if (status == 0) {
+                        layer.msg('惭愧，评论加载失败', 2, 13);
+                        return;
+                    } else {
+                        var data = resp['data'];
+                        if (data.length > 0) {
+                            $('#noDis-' + pageid).hide();
+                            var disHtmls = "";
+                            for (var i = 0; i < data.length; i++) {
+                                var user_url="<a href='userspace.php?userid="+data[i]['userid']+"'>"+data[i]['username']+"</a>"
+                                disHtmls += "<li class='list-group-item'>" +user_url + "：" + data[i]['discuss'] + "</li>"
+                            }
+                            $('#discussbox-' + pageid).append(disHtmls);
+                        } else {
+                            $('#noDis-' + pageid).show();
+                        }
+                    }
+                } else {
+                    layer.msg('惭愧，评论加载失败', 2, 13);
+                }
+                layer.close(loadi);
+            }, 'json');
         });
-        $('#rl_exp_btn').sinaEmotion({
-            target: $('#rl_exp_input')
+        $('.face').sinaEmotion({
+            class:true,
+            target: '#rl_exp_input-'
         });
         $('.page_title').click(function () {
 

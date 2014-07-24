@@ -16,7 +16,11 @@
 				$(this).parent().append('<div id="emotions"></div>');
 			}
 			$('#emotions').css({top: $(this)[0].offsetTop + $(this).height() + 8, left: $(this)[0].offsetLeft});
-			target = options.target;
+            var   domid=options.target;
+            if(options.class!=null &&options.class==true){
+                domid+=$(this).attr("id").split("-")[1];
+            }
+            target = $(domid);
 			if($('#emotions .facecategorys')[0]){
 				$('#emotions').toggle();
 				return;
@@ -26,15 +30,15 @@
 				event.stopPropagation();
 			});
 			$.ajax({
-				dataType: 'jsonp',
-				url: 'https://api.weibo.com/2/emotions.json?source=' + options.app_id,
+				dataType: 'json',
+				url: "../action/emotion.php?ac=query_all",
 				beforeSend: function(){},
 				error: function(request){
 					$('#emotions').html('<div>加载失败</div>');
 				},
 				success: function(response){
 					$('#emotions').html('<div style="float:right"><a href="javascript:void(0);" id="prev">&laquo;</a><a href="javascript:void(0);" id="next">&raquo;</a></div><div class="facecategorys"></div><div class="facecontainer"></div><div class="page"></div>');
-					var data = response.data;
+					var data = response;
 					for(var i in data){
 						if(data[i].category == ''){
 							data[i].category = '默认';

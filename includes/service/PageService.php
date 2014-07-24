@@ -23,7 +23,7 @@ class PageService
         }
         $sql .= " order by a.udate desc  limit   " . $start . "," . $limit;
         $mysql = new MySQL();
-        $res = $mysql->executeSQL($sql);
+        $res = $mysql->executeReturnObj($sql);
         $pages = array();
         if (empty($res)) return $pages;
         foreach ($res as $page) {
@@ -50,7 +50,7 @@ class PageService
                 array_push($pages, $page);
             }
         }
-        $mysql->closeConnection();
+        $mysql->closeCon();
         return $pages;
     }
 
@@ -62,7 +62,7 @@ class PageService
         }
         $mysql = new MySQL();
         $total = $mysql->countRows("page",$where);
-        $mysql->closeConnection();
+        $mysql->closeCon();
         return $total;
     }
 
@@ -70,8 +70,8 @@ class PageService
     {
         $sql = "select id,pageid,img from page_img where pageid=" . $pageid;
         $mysql = new MySQL();
-        $res = $mysql->executeSQL($sql);
-        $mysql->closeConnection();
+        $res = $mysql->executeReturnObj($sql);
+        $mysql->closeCon();
         return $res;
     }
 }

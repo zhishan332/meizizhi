@@ -5,19 +5,20 @@
         <div class="panel-body" style="text-align: center">
             <form role="form" class="form-horizontal">
                 <div class="form-group">
-                    <label for="username" class="col-sm-3 control-label">用户名<span style="color: red">*</span>：</label>
-
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" name="username" id="username"
-                               placeholder="作为显示的昵称，不作为登录使用" title="作为显示的昵称，不作为登录使用">
-                    </div>
-                </div>
-                <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">邮箱<span style="color: red">*</span>：</label>
 
                     <div class="col-sm-9">
                         <input type="text" class="form-control" name="email" id="email"
                                placeholder="邮箱作为登录使用" title="邮箱作为登录使用">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reg_username" class="col-sm-3 control-label">昵称<span
+                            style="color: red">*</span>：</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="reg_username" id="reg_username"
+                               placeholder="给自己起个好听的名字，不作为登录使用" title="给自己起个好听的名字，不作为登录使用">
                     </div>
                 </div>
                 <div class="form-group">
@@ -30,23 +31,25 @@
 
                 </div>
                 <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">密码<span style="color: red">*</span>：</label>
+                    <label for="reg_password" class="col-sm-3 control-label">密码<span
+                            style="color: red">*</span>：</label>
 
                     <div class="col-sm-9">
-                        <input type="password" class="form-control" name="password" id="password"
+                        <input type="password" class="form-control" name="reg_password" id="reg_password"
                                placeholder="密码" title="密码">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password2" class="col-sm-3 control-label">密码确认<span style="color: red">*</span>：</label>
+                    <label for="reg_password2" class="col-sm-3 control-label">密码确认<span
+                            style="color: red">*</span>：</label>
 
                     <div class="col-sm-9">
-                        <input type="password" class="form-control" name="password2" id="password2"
+                        <input type="password" class="form-control" name="reg_password2" id="reg_password2"
                                placeholder="密码确认" title="密码确认">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="password2" class="col-sm-3 control-label">验证码<span style="color: red">*</span>：</label>
+                    <label for="code_cp" class="col-sm-3 control-label">验证码<span style="color: red">*</span>：</label>
 
                     <div class="col-sm-9">
                         <input type="text" class="form-control" style="width: 150px;float: left" id="code_cp"
@@ -57,7 +60,8 @@
                 </div>
                 <button type="button" id="regBtn" class="btn btn-success btn-lg"> 提 交</button>
             </form>
-            <div class="alert alert-danger" role="alert"  id="alert-box" style="display: none;margin-top: 5px;margin-bottom: 1px">
+            <div class="alert alert-danger" role="alert" id="alert-box"
+                 style="display: none;margin-top: 5px;margin-bottom: 1px">
                 <strong> <span id="tip"></span></strong>
             </div>
         </div>
@@ -65,106 +69,234 @@
     </div>
 </div>
 <script type="text/javascript">
-    var mobilecheck = function(tel){
-        var result = {
-            isMobile:false,
-            number:tel.toString(),
-            operator:'unknown'
-        };
-        if(/^13[5-9]\d{8}$/g.test(tel) ||
-                /^134[0-8]\d{7}$/g.test(tel) ||
-                /^147\d{8}$/g.test(tel) ||
-                /^15[0-27-9]\d{8}$/g.test(tel) ||
-                /^18[2378]\d{8}$/g.test(tel)){
-            result.isMobile = true;
-            result.operator = 'China Mobile';
-        }
-        else if(/^13[0-2]\d{8}$/g.test(tel) ||
-                /^145\d{8}$/g.test(tel) ||
-                /^15[56]\d{8}$/g.test(tel) ||
-                /^18[56]\d{8}$/g.test(tel)){
-            result.isMobile = true;
-            result.operator = 'China Unicom';
-        }
-        else if(/^133\d{8}$/g.test(tel) ||
-                /^153\d{8}$/g.test(tel) ||
-                /^170\d{8}$/g.test(tel) ||
-                /^18[09]\d{8}$/g.test(tel)){
-            result.isMobile = true;
-            result.operator = 'China Telecom';
-        }
-        return result;
+var mobilecheck = function (tel) {
+    var result = {
+        isMobile: false,
+        number: tel.toString(),
+        operator: 'unknown'
     };
-    $(document).ready(function () {
-        $('#regBtn').click(function () {
-            reg();
-        });
-        //google验证
-        $("#getcode_gg").click(function () {
-            $(this).attr("src", '../includes/captcha/code_gg.php?' + Math.random());
-        });
+    if (/^13[5-9]\d{8}$/g.test(tel) ||
+            /^134[0-8]\d{7}$/g.test(tel) ||
+            /^147\d{8}$/g.test(tel) ||
+            /^15[0-27-9]\d{8}$/g.test(tel) ||
+            /^18[2378]\d{8}$/g.test(tel)) {
+        result.isMobile = true;
+        result.operator = 'China Mobile';
+    }
+    else if (/^13[0-2]\d{8}$/g.test(tel) ||
+            /^145\d{8}$/g.test(tel) ||
+            /^15[56]\d{8}$/g.test(tel) ||
+            /^18[56]\d{8}$/g.test(tel)) {
+        result.isMobile = true;
+        result.operator = 'China Unicom';
+    }
+    else if (/^133\d{8}$/g.test(tel) ||
+            /^153\d{8}$/g.test(tel) ||
+            /^170\d{8}$/g.test(tel) ||
+            /^18[09]\d{8}$/g.test(tel)) {
+        result.isMobile = true;
+        result.operator = 'China Telecom';
+    }
+    return result;
+};
+$(document).ready(function () {
+    $('#regBtn').click(function () {
+        reg();
     });
-    function reg() {
-        var username = $("input[name='username']").val();
-        var email = $("input[name='email']").val();
-        var tel = $("input[name='tel']").val();
-        var password = $("input[name='password']").val();
-        var password2 = $("input[name='password2']").val();
-        //进行基本检查
-        if(username ==null || ''==username || (username.length<2 || username >10)){
-            $('#alert-box').show();
-            $('#tip').text("用户名不能为空，并且长度在2到10位之间!");
-            return;
-        }
-        if(!emailFormatCheck(email)){
-            $('#alert-box').show();
-            $('#tip').text("邮箱格式不正确!");
-            return;
-        }
-        if(tel!=null && tel !=''){
-            var ck=new mobilecheck(tel);
-            if(!ck.isMobile){
-                $('#alert-box').show();
-                $('#tip').text("不是有效的手机号!");
-                return;
+    //google验证
+    $("#getcode_gg").click(function () {
+        $(this).attr("src", '../includes/captcha/code_gg.php?' + Math.random());
+    });
+    $('#email').focus();
+    $('#email').blur(function () {
+        if (!checkEmail()) return;
+        $.post("../action/user.php?ac=checkemail", {email: $(this).val()}, function (resp) {
+            if (resp) {
+                if (resp.status == 1) {
+                    $('#alert-box').hide();
+                } else {
+                    $('#alert-box').show();
+                    $('#tip').text(resp['msg'] + "!");
+                }
             }
-        }
-        if(password.length<5 || password.length>15){
+        }, "json");
+    });
+    $('#reg_username').blur(function () {
+        if (!checkUsername()) return;
+        $.post("../action/user.php?ac=checkusername", {username: $(this).val()}, function (resp) {
+            if (resp) {
+                if (resp.status == 1) {
+                    $('#alert-box').hide();
+                } else {
+                    $('#alert-box').show();
+                    $('#tip').text(resp['msg'] + "!");
+                }
+            }
+        }, "json");
+    });
+    $('#tel').blur(function () {
+        if (!checkTel()) return;
+        $.post("../action/user.php?ac=checktel", {tel: $(this).val()}, function (resp) {
+            if (resp) {
+                if (resp.status == 1) {
+                    $('#alert-box').hide();
+                } else {
+                    $('#alert-box').show();
+                    $('#tip').text(resp['msg'] + "!");
+                }
+            }
+        }, "json");
+    });
+    $('#reg_password').blur(function () {
+        checkPassword();
+    });
+    $('#reg_password2').blur(function () {
+        checkPassword2();
+    });
+    $('#code_cp').blur(function () {
+        checkCode();
+    });
+});
+function reg() {
+    if (!check()) return;
+    var username = $("input[name='reg_username']").val();
+    var email = $("input[name='email']").val();
+    var tel = $("input[name='tel']").val();
+    var reg_password = $("input[name='reg_password']").val();
+    var reg_password2 = $("input[name='reg_password2']").val();
+    //进行验证码检查
+    var code_gg = $("#code_cp").val();
+    $.post("../includes/captcha/chk_code.php?act=gg", {code: code_gg}, function (msg) {
+        if (msg == 1) {
+            $('#alert-box').hide();
+            var param = {};
+            param.username = username;
+            param.email = email;
+            param.tel = tel;
+            param.password = reg_password;
+            param.password2 = reg_password2;
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: '../action/user.php?ac=signup',
+                data: param,
+                error: function (resp) {
+                    $('#alert-box').show();
+                    $('#tip').text("很抱歉，网络出现异常!");
+                    return;
+                },
+                success: function (resp) {
+                    if (!resp) {
+                        $('#alert-box').show();
+                        $('#tip').text("很抱歉，系统出现异常!");
+                        return;
+                    }
+                    var status = resp['status'];
+                    if (status == 0) {
+                        $('#alert-box').show();
+                        $('#tip').text(resp['msg'] + "!");
+                        return;
+                    } else {
+                        $('#alert-box').hide();
+                        alert('注册成功');
+                    }
+                }
+            });
+        } else {
             $('#alert-box').show();
-            $('#tip').text("密码必须在5到15位之间!");
-            return;
+            $('#tip').text("验证码错误!");
         }
-        if(password != password2){
+    });
+}
+function check() {
+    return checkEmail() && checkUsername() && checkTel() && checkPassword() && checkPassword2();
+}
+function checkEmail() {
+    var email = $("input[name='email']").val();
+    if (!emailFormatCheck(email)) {
+        $('#alert-box').show();
+        $('#tip').text("邮箱格式不正确!");
+        return false;
+    }
+    return true;
+}
+function checkUsername() {
+    var username = $("input[name='reg_username']").val();
+    //进行基本检查
+    if (username == null || '' == username || (username.length < 2 || username > 10)) {
+        $('#alert-box').show();
+        $('#tip').text("昵称不能为空，并且长度在2到10位之间!");
+        return false;
+    }
+    return true;
+}
+function checkTel() {
+    var tel = $("input[name='tel']").val();
+    if (tel != null && tel != '') {
+        var ck = new mobilecheck(tel);
+        if (!ck.isMobile) {
             $('#alert-box').show();
-            $('#tip').text("两次输入的密码值不一样!");
-            return;
+            $('#tip').text("不是有效的手机号!");
+            return false;
         }
-        //进行验证码检查
-        var code_gg = $("#code_cp").val();
-        $.post("../includes/captcha/chk_code.php?act=gg", {code: code_gg}, function (msg) {
-            if (msg == 1) {
+    }
+    return true;
+}
+function checkPassword() {
+    var password = $("input[name='reg_password']").val();
+    if (password.length < 5 || password.length > 15) {
+        $('#alert-box').show();
+        $('#tip').text("密码必须在5到15位之间!");
+        return false;
+    } else {
+        $('#alert-box').hide();
+    }
+    return true;
+}
+function checkPassword2() {
+    var password = $("input[name='reg_password']").val();
+    var password2 = $("input[name='reg_password2']").val();
+    if (password != password2) {
+        $('#alert-box').show();
+        $('#tip').text("两次输入的密码值不一样!");
+        return false;
+    } else {
+        $('#alert-box').hide();
+    }
+    return true;
+}
+function checkCode() {
+    var code_gg = $("#code_cp").val();
+    $.ajax({
+        type: "post",
+        dataType: "json",
+        url: '../includes/captcha/chk_code.php?act=gg',
+        data: {code: code_gg},
+        async:false,
+        success: function (resp) {
+            if (resp == 1) {
                 $('#alert-box').hide();
-                var param={};
-                param.username=username;
-                param.username=username;
+                return false;
             } else {
                 $('#alert-box').show();
                 $('#tip').text("验证码错误!");
+                return true;
             }
-        });
-    }
-    /**
-     * email格式校验
-     * @param {Object} email 邮件地址内容
-     */
-    function emailFormatCheck(email){
-        if ((email.length > 128) || (email.length < 6)) {
-            return false;
         }
-        var format = /^[A-Za-z0-9+]+[A-Za-z0-9\.\_\-+]*@([A-Za-z0-9\-]+\.)+[A-Za-z0-9]+$/;
-        if (!email.match(format)) {
-            return false;
-        }
-        return true;
+    });
+}
+/**
+ * email格式校验
+ * @param {Object} email 邮件地址内容
+ */
+function emailFormatCheck(email) {
+    if ((email.length > 128) || (email.length < 6)) {
+        return false;
     }
+    var format = /^[A-Za-z0-9+]+[A-Za-z0-9\.\_\-+]*@([A-Za-z0-9\-]+\.)+[A-Za-z0-9]+$/;
+    if (!email.match(format)) {
+        return false;
+    }
+    return true;
+}
 </script>
