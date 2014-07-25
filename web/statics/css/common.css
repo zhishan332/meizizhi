@@ -52,3 +52,9 @@ body, ul, li, ol, dl, dd, dt, caption, pre, blockquote, input, textarea, img, sm
 .p-tag{
     padding: 3px;
 }
+.discuss-ul li{
+    padding-bottom: 3px;
+}
+.discuss-ul li img{
+    margin-bottom: 8px;
+}

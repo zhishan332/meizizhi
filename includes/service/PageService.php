@@ -14,7 +14,7 @@ class PageService
 
     public static function find($keyword, $start = 0, $limit = DEFAULT_LIMIT)
     {
-        $sql = "select a.id,a.pageid,a.title,a.viewnum,a.cover,a.imgnum,a.status,a.cuserid,a.cusername,
+        $sql = "select a.id,a.pageid,a.title,a.viewnum,a.cover,a.imgnum,a.disnum,a.praisenum,a.status,a.cuserid,a.cusername,
                 a.cdate,a.udate ,b.tagid,b.tag,b.num
                 from page a left join  page_tag b
                 on a.pageid=b.pageid  where a.status=10";
@@ -61,7 +61,7 @@ class PageService
             $where .= " and title like '%" . $keyword . "%'";
         }
         $mysql = new MySQL();
-        $total = $mysql->countRows("page",$where);
+        $total = $mysql->countRows("page", $where);
         $mysql->closeCon();
         return $total;
     }
@@ -69,6 +69,34 @@ class PageService
     public static function getImg($pageid)
     {
         $sql = "select id,pageid,img from page_img where pageid=" . $pageid;
+        $mysql = new MySQL();
+        $res = $mysql->executeReturnObj($sql);
+        $mysql->closeCon();
+        return $res;
+    }
+
+    public static function updateDisNum($pageid)
+    {
+        $mysql = new MySQL();
+        $res = $mysql->execute("update page set disnum=disnum+1 where pageid=" . $pageid);
+        $mysql->closeCon();
+        return $res;
+    }
+
+    public static function updatePraiseNum($pageid)
+    {
+        $mysql = new MySQL();
+        $res = $mysql->execute("update page set praisenum=praisenum+1 where pageid=" . $pageid);
+        $mysql->closeCon();
+        return $res;
+    }
+
+    public static function getPage($pageid)
+    {
+        $sql = "select a.id,a.pageid,a.title,a.viewnum,a.cover,a.imgnum,a.disnum,a.praisenum,a.status,a.cuserid,a.cusername,
+                a.cdate,a.udate ,b.img
+                from page a left join  page_img b
+                on a.pageid=b.pageid  where a.pageid=" . $pageid;
         $mysql = new MySQL();
         $res = $mysql->executeReturnObj($sql);
         $mysql->closeCon();

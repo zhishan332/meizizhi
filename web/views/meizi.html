@@ -21,6 +21,8 @@
          $imgPath=STATICROOT2."/".$page['cover'];
          $title=$page['title'];
          $imgnum=$page['imgnum'];
+         $disnum=$page['disnum'];
+         $praisenum=$page['praisenum'];
          $cusername=$page['cusername'];
          $udate=$page['udate'];
          $udate=floor($udate/1000);
@@ -28,6 +30,8 @@
          $dateStr=date('Y-m-d H:i',$udate);
          if($nowTime-$udate<24*3600){
             $dateStr=date('H:i',$udate);
+         }elseif($nowTime-$udate<24*3600*365){
+            $dateStr=date('m-d H:i',$udate);
          }
         ?>
         <li class="list-group-item  img-box">
@@ -41,34 +45,29 @@
                 <h4 style="margin-top: 1px;margin-left: 8px">
                    <span class="label  label-primary" title="图片总数"
                          style="z-index: 9999"><?php echo $imgnum;?>p</span>
-                    <a href="javascript:void(0)" class="page_title">
+                    <a href="view.php?p=<?php echo $pageid; ?>" target="_blank" class="page_title">
                         <small><?php echo $title;?></small>
                     </a>
                     <span style="float: right;">
-                         <span class="label  label-primary" style="width: 50px;margin-left: 10px;font-weight: normal"
+                         <span class="label  label-primary" style="width: 50px;margin-left: 10px;font-size: 11px"
                                title="来自"> <span
                                  title="来自" class="glyphicon glyphicon-user"></span> <?php echo $cusername;?></span>
-                        <span class="label  label-default" style="width: 50px;margin-left: 10px" title="发布时间"> <span
+                        <span class="label  label-default" style="width: 50px;margin-left: 10px;font-size: 11px"
+                              title="发布时间"> <span
                                 title="发布时间" class="glyphicon glyphicon-time"></span> <?php echo $dateStr;?></span>
                     </span>
                 </h4>
             </div>
-            <div style="width: 100%;height: 40px;padding: 5px 0 0 5px">
+            <div style="width: 100%;height: 35px;padding: 5px 0 0 5px">
                 <a href="javascript:void(0)" class="showdis" id="showdis-<?php echo $pageid; ?>"
-                   style="float: left;width: 200px;margin-top: 10px">评论(22)</a>
-
-                <div role="toolbar" class="btn-toolbar" style="float: right;">
-                    <div class="btn-group" style="float: right">
-                        <button type="button" class="btn btn-danger btn-sm p-tag">
-                            <span class="glyphicon glyphicon-heart"></span>清纯
-                        </button>
-                    </div>
-                    <span class="label label-danger" id="num-like"
-                          style="display:none;height: 30px;float: right;padding-top: 10px"><span
-                            class="glyphicon glyphicon-heart"></span>漂亮(120)</span>
-                </div>
+                   style="float: left;margin-top: 3px">评论(<?php echo $disnum;?>)</a>
+                <button id="praise-<?php echo $pageid; ?>" type="button" class="btn btn-danger btn-xs praiseBtn"
+                        style="float: left;margin-left: 5px;margin-top: 2px">
+                    <span class="glyphicon glyphicon-thumbs-up"></span> 赞(<span
+                        id="praisenum-<?php echo $pageid; ?>"><?php echo $praisenum;?></span>)
+                </button>
             </div>
-            <ul class="list-group" id="discussbox-<?php echo $pageid; ?>" style="display: none">
+            <ul class="list-group discuss-ul" id="discussbox-<?php echo $pageid; ?>" style="display: none">
                 <li class="list-group-item" style="height: 90px;padding: 5px">
                     <form role="form" class="navbar-form navbar-left"
                           style="padding-left: 0;margin-left: 0;width: 99%;float: left">
@@ -77,7 +76,8 @@
                                    style="width: 800px"
                                    placeholder="最多50个字">
                         </div>
-                        <button class="btn btn-success" id="disBtn-<?php echo $pageid;?>">评论</button>
+                        <button type="button" class="btn btn-success disBtn" id="disBtn-<?php echo $pageid;?>">评论
+                        </button>
                     </form>
                     <div id="reply" style="float: left;width: 24px">
                         <span class="face" id="rl_exp_btn-<?php echo $pageid;?>"></span>
@@ -146,11 +146,17 @@
             }, 'json');
         });
         $('.showdis').click(function () {
-            var loadi = layer.load(3); //需关闭加载层时，执行layer.close(loadi)即可
             var pageid = $(this).attr("id").split("-")[1];
+            if (!$('#discussbox-' + pageid).is(":hidden")) {
+                $('#discussbox-' + pageid).hide();
+                $('#discussbox-' + pageid + " li:gt(1)").remove();
+                $('#noDis-' + pageid).show();
+                return;
+            }
+            var loadi = layer.load(3); //需关闭加载层时，执行layer.close(loadi)即可
             $('#discussbox-' + pageid).show();
             $("#rl_exp_input-" + pageid).focus();
-            $.get('../action/discuss.php?ac=query_discuss', {pageid:pageid}, function (resp) {
+            $.get('../action/discuss.php?ac=query_discuss', {pageid: pageid}, function (resp) {
                 if (resp) {
                     var status = resp['status'];
                     if (status == 0) {
@@ -159,13 +165,13 @@
                     } else {
                         var data = resp['data'];
                         if (data.length > 0) {
-                            $('#noDis-' + pageid).hide();
                             var disHtmls = "";
                             for (var i = 0; i < data.length; i++) {
-                                var user_url="<a href='userspace.php?userid="+data[i]['userid']+"'>"+data[i]['username']+"</a>"
-                                disHtmls += "<li class='list-group-item'>" +user_url + "：" + data[i]['discuss'] + "</li>"
+                                var user_url = "<a href='userspace.php?userid=" + data[i]['userid'] + "'>" + data[i]['username'] + "</a>"
+                                disHtmls += "<li class='list-group-item'>" + user_url + "：" + data[i]['discuss'] + "</li>"
                             }
-                            $('#discussbox-' + pageid).append(disHtmls);
+                            $(disHtmls).insertAfter($('#noDis-' + pageid));
+                            $('#noDis-' + pageid).hide();
                         } else {
                             $('#noDis-' + pageid).show();
                         }
@@ -177,8 +183,44 @@
             }, 'json');
         });
         $('.face').sinaEmotion({
-            class:true,
+            class: true,
             target: '#rl_exp_input-'
+        });
+        $('.disBtn').click(function () {
+            var pageid = $(this).attr("id").split("-")[1];
+            var dis = $('#rl_exp_input-' + pageid).val();
+            if (dis.length > 60) {
+                layer.tips('字数过多了，精简一下吧', $(this), {guide: 2, time: 2});
+                return;
+            }
+            var domObj = $(this);
+            var param = {};
+            param.pageid = pageid;
+            param.dis = dis;
+            $.post('../action/discuss.php?ac=add_discuss', param, function (resp) {
+                if (resp) {
+                    var st = resp.status;
+                    if (st == 0) {
+                        layer.tips(resp.msg, domObj, {guide: 2, time: 2});
+                    } else {
+                        layer.msg('成功发表评论，重新打开评论后即可显示', 2, 13);
+                    }
+                } else {
+                    layer.tips('惭愧！网络或者系统出现了问题。', domObj, {guide: 2, time: 2});
+                }
+            }, 'json');
+        });
+        $('.praiseBtn').click(function () {
+            var pageid = $(this).attr("id").split("-")[1];
+            var domObj=$(this);
+            $.post('../action/page.php?ac=praise', {pageid: pageid}, function (resp) {
+                if (resp.status == 1) {
+                    var num = $('#praisenum-' + pageid).text();
+                    $('#praisenum-' + pageid).text(parseInt(num) + 1);
+                }else{
+                    layer.tips('您已经赞过了', domObj, {guide: 2, time: 2});
+                }
+            }, 'json');
         });
         $('.page_title').click(function () {
 

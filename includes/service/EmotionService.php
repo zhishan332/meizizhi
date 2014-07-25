@@ -17,4 +17,12 @@ class EmotionService {
         $mysql->closeCon();
         return $res;
     }
+
+    public static function getIconByName($name){
+        $sql = "select icon from emotion where value='".$name."'";
+        $mysql = new MySQL();
+        $res = $mysql->executeReturnFirstObj($sql);
+        $mysql->closeCon();
+        return $res;
+    }
 }

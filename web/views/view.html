@@ -1,15 +1,27 @@
 <div class="container" style="margin-top: 60px">
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">今天去放牛吗啊啊</h3>
+
+             <h3 class="panel-title"> <span class="label  label-primary" title="图片总数"
+                                            style="z-index: 9999;margin-right: 5px"><?php echo $imgnum;?>p</span>
+                 <?php echo $page[0]['title'];?>
+             </h3>
         </div>
         <div class="panel-body">
             <ul class="list-group">
-                <?php for($i=0;$i<5;$i++){?>
+                <?php
+                    $i=1;
+                   foreach ($page as $data){
+                  $imgPath=STATICROOT2."/".$data['img'];
+                ?>
                 <li class="list-group-item" style="border: none;padding: 3px;text-align: center">
-                    <img src="<?php echo STATICROOT;?>/img/dbdfbcebd43deaf.jpg" style="max-width: 960px;">
+                    <span class="badge"><?php echo $i;?></span>
+                    <img src="<?php echo $imgPath;?>"  class="img-rounded">
                 </li>
+                <?php if($i<count($page)){ ?>
+                <hr>
                 <?php } ?>
+                <?php $i++; } ?>
             </ul>
 
         </div>
