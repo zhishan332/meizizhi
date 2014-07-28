@@ -7,6 +7,7 @@ require_once SERVCIEROOT . 'PageService.php';
 $page_title="首页";
 //unset($_SESSION['user']);
 //var_dump($_SESSION['user']);exit;
+$pages=PageService::findShowIndex(0,12);
 include(ROOT . "/web/views/top-a.html");
 include(ROOT . "/web/views/index.html");
 include(ROOT . "/web/views/footer-a.html");

@@ -54,6 +54,20 @@ class PageService
         return $pages;
     }
 
+    public static function findShowIndex($start = 0, $limit = DEFAULT_LIMIT)
+    {
+        $sql = "select a.id,a.pageid,a.title,a.viewnum,a.cover,a.imgnum,a.disnum,a.praisenum,a.status,a.cuserid,a.cusername,
+                a.cdate,a.udate
+                from page  a where a.status=10 and a.showindex=1 ";
+        $sql .= " order by a.udate desc  limit   " . $start . "," . $limit;
+        $mysql = new MySQL();
+        $res = $mysql->executeReturnObj($sql);
+        if (empty($res)) return null;
+        $mysql->closeCon();
+        return $res;
+    }
+
+
     public static function getTotal($keyword)
     {
         $where = " status=10 ";

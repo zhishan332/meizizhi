@@ -1,25 +1,29 @@
 
 <div class="container" style="margin-top: 60px">
     <div class="jumbotron">
-        <h1>Marketing stuff!</h1>
+        <h1>做最好的记录!</h1>
 
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus
             commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
 
-        <p><a role="button" href="#" class="btn btn-lg btn-success common-font">快速注册</a></p>
+        <p><a role="button" href="login.php" class="btn btn-lg btn-success common-font">快速注册</a></p>
     </div>
-    <div class="col-xs-16 col-sm-12">
         <div class="row">
-            <?php for($i=0;$i<9;$i++){?>
-            <div class="col-6 col-sm-6 col-lg-4">
-                <h4>彪悍的人生不需要解释，太衰了最近</h4>
-                <a href="#" class="thumbnail">
-                    <img src="<?php echo STATICROOT;?>/img/dbdfbcebd43deaf.jpg" alt="...">
-                </a>
-                <p><a role="button" href="#" class="btn btn-default">看看她 »</a></p>
+            <?php foreach($pages as $page){
+                  $imgPath=STATICROOT2."/".$page['cover'];
+                  $pageid=$page['pageid'];
+            ?>
+            <div class="col-sm-6 col-md-3">
+                <div class="thumbnail  span3" style="width: 200px; height: 100px;">
+                    <img data-src="holder.js/300x200"  src="<?php echo $imgPath;?>" style="width: 200px; height: 100px;float:left;padding-right:10px" class="img-responsive">
+                </div>
+                <div class="caption">
+                    <p><?php echo $page['title']; ?></p>
+                    <p><a role="button" href="view.php?p=<?php echo $pageid; ?>" class="btn btn-default">看看她 »</a></p>
+                </div>
+
             </div><!--/span-->
             <?php } ?>
         </div>
-    </div>
 </div>
 

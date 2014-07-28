@@ -1,1 +1,1 @@
-page表增加评论数字段disnum /praisenum  未完成
+page表增加评论数字段disnum int/praisenum int/showindex tinyint 未完成

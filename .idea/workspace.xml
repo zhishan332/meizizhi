@@ -3,16 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/service/PageService.php" afterPath="$PROJECT_DIR$/includes/service/PageService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/index.html" afterPath="$PROJECT_DIR$/web/views/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/mysql/log" afterPath="$PROJECT_DIR$/script/mysql/log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="f2fb19f0-053b-44d3-9f51-c4e50d112c22" name="New changelist" comment="" />
     <ignored path="meizizhi.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406277499349" ignored="false" />
+    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406533860252" ignored="false" />
     <file path="/meizi.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406270626614" ignored="false" />
     <file path="/common.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406254565183" ignored="false" />
-    <file path="/index.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405920056061" ignored="false" />
+    <file path="/index.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406536495509" ignored="false" />
     <file path="/top-a.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406182901400" ignored="false" />
     <file path="/view.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406270928749" ignored="false" />
     <file path="/a.dummy" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406016898820" ignored="false" />
@@ -20,7 +23,7 @@
     <file path="/MySQL.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406195356167" ignored="false" />
     <file path="/meizi.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406019380881" ignored="false" />
     <file path="/top.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405914145194" ignored="false" />
-    <file path="/index.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406180691711" ignored="false" />
+    <file path="/index.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406534403480" ignored="false" />
     <file path="/img.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405586405585" ignored="false" />
     <file path="/review.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405914197317" ignored="false" />
     <file path="/publish.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405911873221" ignored="false" />
@@ -30,7 +33,7 @@
     <file path="/jquery.sinaEmotion-1.3.js" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406197536763" ignored="false" />
     <file path="/login.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406179810458" ignored="false" />
     <file path="/layer.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405936763235" ignored="false" />
-    <file path="/PageService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406269977251" ignored="false" />
+    <file path="/PageService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406534341598" ignored="false" />
     <file path="/page.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406269482312" ignored="false" />
     <file path="/user.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406182563115" ignored="false" />
     <file path="/login.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406108576200" ignored="false" />
@@ -45,7 +48,7 @@
     <file path="/emotion.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406195075108" ignored="false" />
     <file path="/emo.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406195368888" ignored="false" />
     <file path="/EmotionService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406253093152" ignored="false" />
-    <file path="/log" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406258429185" ignored="false" />
+    <file path="/log" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406534199823" ignored="false" />
     <file path="/view.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406270837403" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +72,7 @@
       <file leaf-file-name="meizi.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/views/meizi.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="76" selection-start="1918" selection-end="2043" vertical-scroll-proportion="0.0">
+            <state line="47" column="62" selection-start="2073" selection-end="2106" vertical-scroll-proportion="-9.935484">
               <folding />
             </state>
           </provider>
@@ -78,7 +81,7 @@
       <file leaf-file-name="view.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="7" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
+            <state line="11" column="7" selection-start="380" selection-end="380" vertical-scroll-proportion="-7.806452">
               <folding />
             </state>
           </provider>
@@ -87,29 +90,30 @@
       <file leaf-file-name="view.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/views/view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="11" selection-start="916" selection-end="916" vertical-scroll-proportion="-7.096774">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="20" column="11" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.21442495">
+            <state line="12" column="28" selection-start="393" selection-end="393" vertical-scroll-proportion="-8.5161295">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="page.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/action/page.php">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="44" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="13" column="24" selection-start="579" selection-end="579" vertical-scroll-proportion="0.244">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,7 +121,7 @@
       <file leaf-file-name="log" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/mysql/log">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="29" selection-start="20" selection-end="29" vertical-scroll-proportion="0.0">
+            <state line="0" column="36" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -144,7 +148,7 @@
       <file leaf-file-name="PageService.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/service/PageService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="102" column="20" selection-start="3436" selection-end="3436" vertical-scroll-proportion="0.0">
+            <state line="56" column="40" selection-start="1948" selection-end="1961" vertical-scroll-proportion="-1.9354838">
               <folding />
             </state>
           </provider>
@@ -153,7 +157,7 @@
       <file leaf-file-name="meizi.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/meizi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="162" selection-end="328" vertical-scroll-proportion="0.0">
+            <state line="4" column="0" selection-start="162" selection-end="328" vertical-scroll-proportion="-0.7096774">
               <folding />
             </state>
           </provider>
@@ -177,7 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/script/php/emo.php" />
         <option value="$PROJECT_DIR$/includes/Config.php" />
         <option value="$PROJECT_DIR$/action/emotion.php" />
         <option value="$PROJECT_DIR$/web/statics/plugin/sinaEmotion/jquery.sinaEmotion-1.3.js" />
@@ -186,13 +189,14 @@
         <option value="$PROJECT_DIR$/includes/dao/MySQL.php" />
         <option value="$PROJECT_DIR$/web/statics/css/common.css" />
         <option value="$PROJECT_DIR$/includes/service/DiscussService.php" />
-        <option value="$PROJECT_DIR$/script/mysql/log" />
         <option value="$PROJECT_DIR$/action/page.php" />
-        <option value="$PROJECT_DIR$/includes/service/PageService.php" />
         <option value="$PROJECT_DIR$/web/view.php" />
         <option value="$PROJECT_DIR$/web/views/meizi.html" />
         <option value="$PROJECT_DIR$/web/views/view.html" />
+        <option value="$PROJECT_DIR$/script/mysql/log" />
+        <option value="$PROJECT_DIR$/includes/service/PageService.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
+        <option value="$PROJECT_DIR$/web/views/index.html" />
       </list>
     </option>
   </component>
@@ -229,9 +233,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -326,7 +327,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sinaEmotion" />
+              <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -476,6 +477,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -569,14 +573,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28257576" sideWeight="0.67116356" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2871212" sideWeight="0.67116356" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288364" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -586,6 +589,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -653,11 +657,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/views/top-a.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="71" selection-start="4976" selection-end="5028" vertical-scroll-proportion="-4.2580647" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action/emotion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="164" selection-end="266" vertical-scroll-proportion="-2.8387096" />
@@ -685,30 +684,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/mysql/log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="29" selection-start="20" selection-end="29" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action/page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="44" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="7" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/meizi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="76" selection-start="1918" selection-end="2043" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -727,34 +705,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="11" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/mysql/log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="36" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/includes/service/PageService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="102" column="20" selection-start="3436" selection-end="3436" vertical-scroll-proportion="0.0">
+        <state line="56" column="40" selection-start="1948" selection-end="1961" vertical-scroll-proportion="-1.9354838">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="7" selection-start="380" selection-end="380" vertical-scroll-proportion="-7.806452">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/meizi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="162" selection-end="328" vertical-scroll-proportion="0.0">
+        <state line="4" column="0" selection-start="162" selection-end="328" vertical-scroll-proportion="-0.7096774">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/views/view.html">
+    <entry file="file://$PROJECT_DIR$/web/views/meizi.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="11" selection-start="916" selection-end="916" vertical-scroll-proportion="-7.096774">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#h3#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="47" column="62" selection-start="2073" selection-end="2106" vertical-scroll-proportion="-9.935484">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="159" selection-end="159" vertical-scroll-proportion="0.21442495">
+        <state line="12" column="28" selection-start="393" selection-end="393" vertical-scroll-proportion="-8.5161295">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="24" selection-start="579" selection-end="579" vertical-scroll-proportion="0.244">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
