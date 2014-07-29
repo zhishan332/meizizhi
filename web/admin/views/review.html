@@ -4,7 +4,7 @@
           <span class="input-group-btn">
             <button class="btn btn-default" type="button">Go!</button>
           </span>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control">
         </div>
         <!-- /input-group -->
         <div class="btn-group" style="padding: 5px;float: left;">
@@ -12,9 +12,9 @@
                 审核状态-全部 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="review.php?status=1">全部</a></li>
-                <li><a href="review.php?status=2">未审核</a></li>
-                <li><a href="review.php?status=3">已审核</a></li>
+                <li><a href="review.php?s=-1">全部</a></li>
+                <li><a href="review.php?s=10">未审核</a></li>
+                <li><a href="review.php?s=20">已审核</a></li>
             </ul>
         </div>
         <form class="navbar-form navbar-left" role="search" style="margin-top:5px!important;">
@@ -28,45 +28,172 @@
     </div>
     <div style="clear: both"></div>
     <ul class="list-group">
-        <li class="list-group-item">
+        <?php foreach ($pages as $page){
+                 $id=$page['id'];
+                 $pageid=$page['pageid'];
+                 $cover=$page['cover'];
+                 $title=$page['title'];
+                 $imgs=$page['imgs'];
+                 $st=$page['status'];
+                 $si=$page['showindex'];
+                 $imgnum=$page['imgnum'];
+                 $disnum=$page['disnum'];
+                 $praisenum=$page['praisenum'];
+                 $cusername=$page['cusername'];
+                 $udate=$page['udate'];
+                 $udate=floor($udate/1000);
+                 $nowTime=time();
+                 $dateStr=date('Y-m-d H:i',$udate);
+                 if($nowTime-$udate<24*3600){
+                    $dateStr=date('H:i',$udate);
+                 }elseif($nowTime-$udate<24*3600*365){
+                    $dateStr=date('m-d H:i',$udate);
+                 }
+           ?>
+        <li class="list-group-item" id="li-<?php echo $pageid;?>">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <input type="text" class="form-control" placeholder="标题" value="彪悍的人生不需要解释，太衰了最近">
-                        <span class="label label-default">主键：1</span>
-                        <span class="label label-primary">标题字数：20</span>
+                        <input type="text" id="title-<?php echo $pageid;?>" class="form-control" placeholder="标题"
+                               value="<?php echo $title;?>">
+                        <span class="label label-default">主键：<?php echo $id; ?></span>
+                        <span class="label label-primary">标题字数：<?php echo strlen($title); ?></span>
+                        <?php if($st==20){?>
                         <span class="label label-success">审核通过</span>
+                        <?php }else{?>
                         <span class="label label-warning">待审核</span>
+                        <?php }?>
+                        <?php if($si==1){?>
+                        <span class="label label-danger">首页展示</span>
+                        <?php }?>
                     </h3>
                 </div>
                 <div class="panel-body">
-                    <?php for($i=0;$i<3;$i++){?>
+                    <?php
+                    $in=0;
+                    foreach($imgs as $img){
+                          $in++;
+                          $imgid=$img['imgid'];
+                          $imgPath=STATICROOT2."/".$img['img'];
+                          $isCover=$img['img']==$cover;
+                    ?>
                     <div style="padding: 5px">
-                        <span class="label label-warning">1</span>
-                        <img src="<?php echo STATICROOT;?>/img/dbdfbcebd43deaf.jpg"
-                             style="max-width: 800px;max-height: 500px">
-                        <button type="button" class="btn btn-danger">删除</button>
+                        <span class="label label-warning"><?php echo $in;?></span>
+                        <img src="<?php echo $imgPath;?>"
+                             style="max-width: 800px;max-height: 500px" id="img-<?php echo $imgid; ?>">
+                        <?php if($isCover){?>
+                        <span class="label label-success">封面</span>
+                        <?php } ?>
+                        <button type="button" value="<?php echo $imgid;?>" class="btn btn-danger imgdelBtn">删除</button>
+                        <button type="button" value="<?php echo $imgid;?>"
+                                class="btn btn-danger imgCoverBtn">封面
+                        </button>
                     </div>
-                    <?php }?>
+                    <?php } ?>
                     <div class="btn-group" style="float: right">
-                        <button type="button" class="btn btn-danger">删除</button>
-                        <button type="button" class="btn btn-success">保存并发布</button>
-                        <button type="button" class="btn btn-warning">保存并发到首页</button>
+                        <button type="button" value="<?php echo $pageid;?>" class="btn btn-danger delPageBtn">删除
+                        </button>
+                        <button type="button" value="<?php echo $pageid;?>" class="btn btn-success updatePageBtn">
+                            保存并发布
+                        </button>
+                        <button type="button" value="<?php echo $pageid;?>" class="btn btn-warning updatePageIndexBtn">
+                            保存并发到首页
+                        </button>
                     </div>
                 </div>
             </div>
         </li>
+        <?php } ?>
     </ul>
     <div style="clear: both"></div>
-    <ul class="pagination  pagination-lg" style="margin: 0;">
-        <li class="disabled"><a href="#">&laquo;</a></li>
-        <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">&raquo;</a></li>
+    <?php if($total>15){?>
+    <ul class="pagination pagination-lg" style="margin-top: 0!important;">
+        <?php if(1==$page){?>
+        <li class="disabled"><a href="javascript:void(0)" onclick="">&laquo;</a></li>
+        <?php }else{
+        ?>
+        <li><a href="<?php echo $pre_url; ?>">&laquo;</a></li>
+        <?php } ?>
+        <?php for($i=$ss;$i<=$dd;$i++){
+            if($i==$pnum){
+        ?>
+        <li class="active"><a href="javascript:void(0)" onclick=""><?php echo $i;?></a></li>
+        <?php }else{
+            $url='review.php?p='.$i. '&s=' . $status;
+            if(!empty($key)){
+                $url='review.php?k='.$key.'&p='.$i. '&s=' . $status;
+            }
+          ?>
+        <li><a href="<?php echo $url; ?>"><?php echo $i;?></a></li>
+        <?php }
+        } ?>
+        <?php if($lastpg==$pnum){?>
+        <li class="disabled"><a href="javascript:void(0)" onclick="">&raquo;</a></li>
+        <?php }else{
+           $url='review.php?p='.($pnum-1). '&s=' . $status;
+           if(!empty($key)){
+                $url='review.php?k='.$key.'&p='.($pnum+1). '&s=' . $status;
+            }
+        ?>
+        <li><a href="<?php echo $next_url; ?>">&raquo;</a></li>
+        <?php } ?>
     </ul>
+    <?php } ?>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.imgdelBtn').click(function () {
+            var imgid = $(this).val();
+            delImg(imgid);
+        });
+        $('.imgCoverBtn').click(function () {
+            var imgid = $(this).val();
+            setCover(imgid);
+        });
+        $('.delPageBtn').click(function () {
+            var pageid = $(this).val();
+            delPage(pageid);
+        });
+        $('.updatePageBtn').click(function () {
+            var pageid = $(this).val();
+            updatePage(pageid, 0);
+        });
+        $('.updatePageIndexBtn').click(function () {
+            var pageid = $(this).val();
+            updatePage(pageid, 1);
+        });
+    });
+    function delImg(imgid) {
+        $.post('../../admin/action.php?ac=del_img', {imgid: imgid}, function (resp) {
+            if (resp && resp['status'] == 1) {
+                $('#img-' + imgid).remove();
+            }
+        }, 'json');
+    }
+    function setCover(imgid) {
+        $.post('../../admin/action.php?ac=set_cover', {imgid: imgid}, function (resp) {
+            if (resp && resp['status'] == 1) {
+                alert('设置成功');
+            }
+        }, 'json');
+    }
+
+    function delPage(pageid) {
+        if (!confirm("确定删除吗，将会删除图片和评论等?"))return;
+        $.post('../../admin/action.php?ac=del_page', {pageid: pageid}, function (resp) {
+            if (resp && resp['status'] == 1) {
+                $('#li-' + pageid).remove();
+            }
+        }, 'json');
+    }
+    function updatePage(pageid, showindex) {
+        var title = $('#title-' + pageid).val();
+        $.post('../../admin/action.php?ac=update_page', {pageid: pageid, title: title, showindex: showindex}, function (resp) {
+            if (resp && resp['status'] == 1) {
+                alert('设置成功');
+            }
+        }, 'json');
+    }
+</script>
 </body>
 </html>

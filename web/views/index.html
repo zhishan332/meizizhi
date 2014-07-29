@@ -8,22 +8,24 @@
 
         <p><a role="button" href="login.php" class="btn btn-lg btn-success common-font">快速注册</a></p>
     </div>
-        <div class="row">
+        <div class="row" >
             <?php foreach($pages as $page){
                   $imgPath=STATICROOT2."/".$page['cover'];
                   $pageid=$page['pageid'];
+                  $title= $page['title'];
+                  $title=StrHelper::cut_str($title,18,0);
             ?>
-            <div class="col-sm-6 col-md-3">
-                <div class="thumbnail  span3" style="width: 200px; height: 100px;">
-                    <img data-src="holder.js/300x200"  src="<?php echo $imgPath;?>" style="width: 200px; height: 100px;float:left;padding-right:10px" class="img-responsive">
+            <div class="col-xs-5 col-lg-3">
+                <div class="thumbnail " style="width: 270px;height: 230px;overflow: hidden">
+                    <img  src="<?php echo $imgPath;?>"  class="img-responsive">
                 </div>
                 <div class="caption">
-                    <p><?php echo $page['title']; ?></p>
+                    <p style="overflow-x: hidden"><nobr><?php echo $title;?></nobr></p>
                     <p><a role="button" href="view.php?p=<?php echo $pageid; ?>" class="btn btn-default">看看她 »</a></p>
                 </div>
 
             </div><!--/span-->
             <?php } ?>
-        </div>
+    </div>
 </div>
 

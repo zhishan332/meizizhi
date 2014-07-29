@@ -2,29 +2,150 @@
     <div class="panel panel-default">
         <div class="panel-heading">
 
-             <h3 class="panel-title"> <span class="label  label-primary" title="图片总数"
-                                            style="z-index: 9999;margin-right: 5px"><?php echo $imgnum;?>p</span>
-                 <?php echo $page[0]['title'];?>
-             </h3>
+            <h3 class="panel-title"> <span class="label  label-primary" title="图片总数"
+                                           style="z-index: 9999;margin-right: 5px"><?php echo $imgnum;?>p</span>
+                <?php echo $page[0]['title'];?>
+                 <span style="float: right;">
+                         <span class="label  label-primary" style="width: 50px;margin-left: 10px;font-size: 11px"
+                               title="来自"> <span
+                                 title="来自" class="glyphicon glyphicon-user"></span> <?php echo $cusername;?></span>
+                        <span class="label  label-default" style="width: 50px;margin-left: 10px;font-size: 11px"
+                              title="发布时间"> <span
+                                title="发布时间" class="glyphicon glyphicon-time"></span> <?php echo $dateStr;?></span>
+                    </span>
+            </h3>
         </div>
         <div class="panel-body">
             <ul class="list-group">
                 <?php
                     $i=1;
                    foreach ($page as $data){
-                  $imgPath=STATICROOT2."/".$data['img'];
+                       $imgPath=STATICROOT2."/".$data['img'];
+                       $disnum=$data['disnum'];
+                       $praisenum=$data['praisenum'];
                 ?>
                 <li class="list-group-item" style="border: none;padding: 3px;text-align: center">
                     <span class="badge"><?php echo $i;?></span>
-                    <img src="<?php echo $imgPath;?>"  class="img-rounded">
+                    <img src="<?php echo $imgPath;?>" class="img-rounded">
                 </li>
                 <?php if($i<count($page)){ ?>
                 <hr>
                 <?php } ?>
                 <?php $i++; } ?>
             </ul>
-
+            <div style="width: 100%;height: 35px;padding: 5px 0 0 5px">
+                <a href="javascript:void(0)" class="showdis" id="showdis-<?php echo $pageid; ?>"
+                   style="float: left;margin-top: 3px">评论(<?php echo $disnum;?>)</a>
+                <button id="praise-<?php echo $pageid; ?>" type="button" class="btn btn-danger btn-xs praiseBtn"
+                        style="float: left;margin-left: 5px;margin-top: 2px">
+                    <span class="glyphicon glyphicon-thumbs-up"></span> 赞(<span
+                        id="praisenum-<?php echo $pageid; ?>"><?php echo $praisenum;?></span>)
+                </button>
+            </div>
+            <ul class="list-group discuss-ul" id="discussbox-<?php echo $pageid; ?>" style="display: none">
+                <li class="list-group-item" style="height: 90px;padding: 5px">
+                    <form role="form" class="navbar-form navbar-left"
+                          style="padding-left: 0;margin-left: 0;width: 99%;float: left">
+                        <div class="form-group">
+                            <input type="text" id="rl_exp_input-<?php echo $pageid;?>" class="form-control"
+                                   style="width: 800px"
+                                   placeholder="最多50个字">
+                        </div>
+                        <button type="button" class="btn btn-success disBtn" id="disBtn-<?php echo $pageid;?>">评论
+                        </button>
+                    </form>
+                    <div id="reply" style="float: left;width: 24px">
+                        <span class="face" id="rl_exp_btn-<?php echo $pageid;?>"></span>
+                    </div>
+                </li>
+                <li class="list-group-item" id="noDis-<?php echo $pageid;?>" style="display: none">
+                    还没有评论！
+                </li>
+            </ul>
         </div>
     </div>
 
 </div>
+<script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/layer-v1.8.4/extend/layer.ext.js"></script>
+<script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/sinaEmotion/jquery.sinaEmotion-1.3.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.showdis').click(function () {
+            var pageid = $(this).attr("id").split("-")[1];
+            if (!$('#discussbox-' + pageid).is(":hidden")) {
+                $('#discussbox-' + pageid).hide();
+                $('#discussbox-' + pageid + " li:gt(1)").remove();
+                $('#noDis-' + pageid).show();
+                return;
+            }
+            var loadi = layer.load(3); //需关闭加载层时，执行layer.close(loadi)即可
+            $('#discussbox-' + pageid).show();
+            $("#rl_exp_input-" + pageid).focus();
+            $.get('../action/discuss.php?ac=query_discuss', {pageid: pageid}, function (resp) {
+                if (resp) {
+                    var status = resp['status'];
+                    if (status == 0) {
+                        layer.msg('惭愧，评论加载失败', 2, 13);
+                        return;
+                    } else {
+                        var data = resp['data'];
+                        if (data.length > 0) {
+                            var disHtmls = "";
+                            for (var i = 0; i < data.length; i++) {
+                                var user_url = "<a href='userspace.php?userid=" + data[i]['userid'] + "'>" + data[i]['username'] + "</a>"
+                                disHtmls += "<li class='list-group-item'>" + user_url + "：" + data[i]['discuss'] + "</li>"
+                            }
+                            $(disHtmls).insertAfter($('#noDis-' + pageid));
+                            $('#noDis-' + pageid).hide();
+                        } else {
+                            $('#noDis-' + pageid).show();
+                        }
+                    }
+                } else {
+                    layer.msg('惭愧，评论加载失败', 2, 13);
+                }
+                layer.close(loadi);
+            }, 'json');
+        });
+        $('.face').sinaEmotion({
+            class: true,
+            target: '#rl_exp_input-'
+        });
+        $('.disBtn').click(function () {
+            var pageid = $(this).attr("id").split("-")[1];
+            var dis = $('#rl_exp_input-' + pageid).val();
+            if (dis.length > 60) {
+                layer.tips('字数过多了，精简一下吧', $(this), {guide: 2, time: 2});
+                return;
+            }
+            var domObj = $(this);
+            var param = {};
+            param.pageid = pageid;
+            param.dis = dis;
+            $.post('../action/discuss.php?ac=add_discuss', param, function (resp) {
+                if (resp) {
+                    var st = resp.status;
+                    if (st == 0) {
+                        layer.tips(resp.msg, domObj, {guide: 2, time: 2});
+                    } else {
+                        layer.msg('成功发表评论，重新打开评论后即可显示', 2, 13);
+                    }
+                } else {
+                    layer.tips('惭愧！网络或者系统出现了问题。', domObj, {guide: 2, time: 2});
+                }
+            }, 'json');
+        });
+        $('.praiseBtn').click(function () {
+            var pageid = $(this).attr("id").split("-")[1];
+            var domObj = $(this);
+            $.post('../action/page.php?ac=praise', {pageid: pageid}, function (resp) {
+                if (resp.status == 1) {
+                    var num = $('#praisenum-' + pageid).text();
+                    $('#praisenum-' + pageid).text(parseInt(num) + 1);
+                } else {
+                    layer.tips('虽然很喜欢，但是您已经赞过了', domObj, {guide: 2, time: 2});
+                }
+            }, 'json');
+        });
+    });
+</script>

@@ -2,30 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/plugin/scrolltop/rocket_up.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/ReviewService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/helper/StrHelper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/action.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/plugin/scrolltop/mumayi_top.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/plugin/scrolltop/special.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/Config.php" afterPath="$PROJECT_DIR$/includes/Config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/service/PageService.php" afterPath="$PROJECT_DIR$/includes/service/PageService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/footer-a.html" afterPath="$PROJECT_DIR$/web/views/footer-a.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/index.html" afterPath="$PROJECT_DIR$/web/views/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/mysql/log" afterPath="$PROJECT_DIR$/script/mysql/log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin/views/review.html" afterPath="$PROJECT_DIR$/web/admin/views/review.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin/review.php" afterPath="$PROJECT_DIR$/web/admin/review.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/top-a.html" afterPath="$PROJECT_DIR$/web/views/top-a.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin/views/top.html" afterPath="$PROJECT_DIR$/web/admin/views/top.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/view.html" afterPath="$PROJECT_DIR$/web/views/view.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/view.php" afterPath="$PROJECT_DIR$/web/view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="f2fb19f0-053b-44d3-9f51-c4e50d112c22" name="New changelist" comment="" />
     <ignored path="meizizhi.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406533860252" ignored="false" />
+    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406612113520" ignored="false" />
     <file path="/meizi.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406270626614" ignored="false" />
     <file path="/common.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406254565183" ignored="false" />
-    <file path="/index.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406536495509" ignored="false" />
-    <file path="/top-a.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406182901400" ignored="false" />
-    <file path="/view.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406270928749" ignored="false" />
+    <file path="/index.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406616084067" ignored="false" />
+    <file path="/top-a.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406617109199" ignored="false" />
+    <file path="/view.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406616551682" ignored="false" />
     <file path="/a.dummy" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406016898820" ignored="false" />
     <file path="/ImgService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405580251276" ignored="false" />
     <file path="/MySQL.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406195356167" ignored="false" />
     <file path="/meizi.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406019380881" ignored="false" />
-    <file path="/top.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405914145194" ignored="false" />
-    <file path="/index.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406534403480" ignored="false" />
+    <file path="/top.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406617807599" ignored="false" />
+    <file path="/index.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406613479811" ignored="false" />
     <file path="/img.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405586405585" ignored="false" />
-    <file path="/review.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405914197317" ignored="false" />
+    <file path="/review.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406628445063" ignored="false" />
     <file path="/publish.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405911873221" ignored="false" />
     <file path="/rl_exp.js" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405929954525" ignored="false" />
     <file path="/rl_exp.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405930951941" ignored="false" />
@@ -33,23 +45,27 @@
     <file path="/jquery.sinaEmotion-1.3.js" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406197536763" ignored="false" />
     <file path="/login.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406179810458" ignored="false" />
     <file path="/layer.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405936763235" ignored="false" />
-    <file path="/PageService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406534341598" ignored="false" />
+    <file path="/PageService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406613023731" ignored="false" />
     <file path="/page.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406269482312" ignored="false" />
     <file path="/user.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406182563115" ignored="false" />
     <file path="/login.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406108576200" ignored="false" />
     <file path="/UserService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406170799349" ignored="false" />
     <file path="/SequenceHelper.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406180306974" ignored="false" />
-    <file path="/Config.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406196136403" ignored="false" />
+    <file path="/Config.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406624972016" ignored="false" />
     <file path="/UserHelper.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406168189312" ignored="false" />
     <file path="/userspace.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406171665116" ignored="false" />
-    <file path="/discuss.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406255964610" ignored="false" />
-    <file path="/DiscussService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406258690158" ignored="false" />
+    <file path="/discuss.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406616611312" ignored="false" />
+    <file path="/DiscussService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406616617870" ignored="false" />
     <file path="/emotion.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406196064082" ignored="false" />
     <file path="/emotion.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406195075108" ignored="false" />
     <file path="/emo.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406195368888" ignored="false" />
     <file path="/EmotionService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406253093152" ignored="false" />
     <file path="/log" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406534199823" ignored="false" />
-    <file path="/view.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406270837403" ignored="false" />
+    <file path="/view.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406616873025" ignored="false" />
+    <file path="/StrHelper.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406613368166" ignored="false" />
+    <file path="/ReviewService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406628836986" ignored="false" />
+    <file path="/review.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406628758249" ignored="false" />
+    <file path="/action.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406626782611" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,74 +88,67 @@
       <file leaf-file-name="meizi.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/views/meizi.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="62" selection-start="2073" selection-end="2106" vertical-scroll-proportion="-9.935484">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="7" selection-start="380" selection-end="380" vertical-scroll-proportion="-7.806452">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/views/view.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="11" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="28" selection-start="393" selection-end="393" vertical-scroll-proportion="-8.5161295">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/views/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="24" selection-start="579" selection-end="579" vertical-scroll-proportion="0.244">
+            <state line="145" column="23" selection-start="6580" selection-end="6844" vertical-scroll-proportion="-10.67742">
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/mysql/log">
+      <file leaf-file-name="review.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/admin/views/review.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="36" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+            <state line="66" column="55" selection-start="3251" selection-end="3251" vertical-scroll-proportion="-17.548388">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="action.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/action.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="22" selection-start="1353" selection-end="1353" vertical-scroll-proportion="-10.16129">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="discuss.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/action/discuss.php">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="32" selection-start="1659" selection-end="1688" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReviewService.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/ReviewService.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="136" column="20" selection-start="4577" selection-end="4577" vertical-scroll-proportion="0.208">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/action/user.php">
+      <file leaf-file-name="MySQL.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/dao/MySQL.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="28" selection-start="5022" selection-end="5047" vertical-scroll-proportion="0.0">
+            <state line="68" column="13" selection-start="1507" selection-end="1507" vertical-scroll-proportion="1.032258">
               <folding />
             </state>
           </provider>
@@ -148,7 +157,16 @@
       <file leaf-file-name="PageService.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/service/PageService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="40" selection-start="1948" selection-end="1961" vertical-scroll-proportion="-1.9354838">
+            <state line="20" column="60" selection-start="668" selection-end="668" vertical-scroll-proportion="0.7096774">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/Config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="13" selection-start="640" selection-end="640" vertical-scroll-proportion="-9.451612">
               <folding />
             </state>
           </provider>
@@ -157,7 +175,16 @@
       <file leaf-file-name="meizi.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/meizi.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="162" selection-end="328" vertical-scroll-proportion="-0.7096774">
+            <state line="31" column="27" selection-start="880" selection-end="880" vertical-scroll-proportion="-17.258064">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="review.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/admin/review.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="27" selection-start="436" selection-end="436" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -181,22 +208,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/includes/Config.php" />
-        <option value="$PROJECT_DIR$/action/emotion.php" />
-        <option value="$PROJECT_DIR$/web/statics/plugin/sinaEmotion/jquery.sinaEmotion-1.3.js" />
-        <option value="$PROJECT_DIR$/includes/service/EmotionService.php" />
-        <option value="$PROJECT_DIR$/action/discuss.php" />
-        <option value="$PROJECT_DIR$/includes/dao/MySQL.php" />
-        <option value="$PROJECT_DIR$/web/statics/css/common.css" />
-        <option value="$PROJECT_DIR$/includes/service/DiscussService.php" />
-        <option value="$PROJECT_DIR$/action/page.php" />
-        <option value="$PROJECT_DIR$/web/view.php" />
-        <option value="$PROJECT_DIR$/web/views/meizi.html" />
-        <option value="$PROJECT_DIR$/web/views/view.html" />
-        <option value="$PROJECT_DIR$/script/mysql/log" />
-        <option value="$PROJECT_DIR$/includes/service/PageService.php" />
+        <option value="$PROJECT_DIR$/includes/helper/StrHelper.php" />
         <option value="$PROJECT_DIR$/web/index.php" />
         <option value="$PROJECT_DIR$/web/views/index.html" />
+        <option value="$PROJECT_DIR$/includes/service/DiscussService.php" />
+        <option value="$PROJECT_DIR$/action/discuss.php" />
+        <option value="$PROJECT_DIR$/web/views/view.html" />
+        <option value="$PROJECT_DIR$/web/view.php" />
+        <option value="$PROJECT_DIR$/web/views/top-a.html" />
+        <option value="$PROJECT_DIR$/web/views/footer-a.html" />
+        <option value="$PROJECT_DIR$/web/admin/views/top.html" />
+        <option value="$PROJECT_DIR$/includes/service/PageService.php" />
+        <option value="$PROJECT_DIR$/includes/Config.php" />
+        <option value="$PROJECT_DIR$/admin/action.php" />
+        <option value="$PROJECT_DIR$/web/admin/views/review.html" />
+        <option value="$PROJECT_DIR$/web/admin/review.php" />
+        <option value="$PROJECT_DIR$/admin/ReviewService.php" />
       </list>
     </option>
   </component>
@@ -233,6 +260,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files" />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -297,11 +327,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="statics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -319,113 +345,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="statics" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="plugin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bootstrap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="script" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="php" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="meizizhi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="script" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mysql" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -471,14 +395,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="meizizhi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="action" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files" />
       </pane>
     </panes>
   </component>
@@ -491,13 +426,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\programs\wamp\www\meizizhi\web\statics\plugin\scrolltop" />
       <recent name="D:\programs\wamp\www\meizizhi\web\statics\plugin" />
       <recent name="D:\programs\wamp\www\meizizhi\includes\dao" />
       <recent name="D:\programs\wamp\www\meizizhi\includes\captcha" />
       <recent name="D:\programs\wamp\www\meizizhi\web\statics\plugin\layer-v1.8.4\skin\default" />
-      <recent name="D:\programs\wamp\www\meizizhi\web\statics\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\programs\wamp\www\meizizhi\web\statics\plugin\scrolltop" />
       <recent name="D:\programs\wamp\www\meizizhi" />
       <recent name="D:\programs\wamp\www\meizizhi\web\statics\plugin\layer-v1.8.4" />
       <recent name="D:\programs\wamp\www\meizizhi\web\admin\views" />
@@ -568,18 +504,22 @@
       <created>1406277500459</created>
       <updated>1406277500459</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="页面开发">
+      <created>1406537473645</created>
+      <updated>1406537473645</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2871212" sideWeight="0.67116356" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29166666" sideWeight="0.67116356" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288364" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -659,109 +599,143 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/action/emotion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="164" selection-end="266" vertical-scroll-proportion="-2.8387096" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/dao/MySQL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="312" column="20" selection-start="8776" selection-end="8776" vertical-scroll-proportion="-6.935484" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/statics/css/common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="20" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/service/DiscussService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="31" selection-start="1754" selection-end="1754" vertical-scroll-proportion="-9.032258" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="25" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="44" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/discuss.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="32" selection-start="1659" selection-end="1688" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="28" selection-start="5022" selection-end="5047" vertical-scroll-proportion="0.0">
+        <state line="5" column="0" selection-start="267" selection-end="366" vertical-scroll-proportion="-3.548387">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/views/view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="11" selection-start="916" selection-end="916" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#h3#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#span#1;n#h3#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#span#1;n#h3#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#li#0;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#li#0;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="73" selection-end="163" vertical-scroll-proportion="-2.1290324">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/mysql/log">
+    <entry file="file://$PROJECT_DIR$/includes/service/EmotionService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="36" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
+        <state line="8" column="0" selection-start="166" selection-end="243" vertical-scroll-proportion="-5.677419">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/service/PageService.php">
+    <entry file="file://$PROJECT_DIR$/web/views/footer-a.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="40" selection-start="1948" selection-end="1961" vertical-scroll-proportion="-1.9354838">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/view.php">
+    <entry file="file://$PROJECT_DIR$/action/discuss.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="7" selection-start="380" selection-end="380" vertical-scroll-proportion="-7.806452">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/meizi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="162" selection-end="328" vertical-scroll-proportion="-0.7096774">
+        <state line="24" column="29" selection-start="687" selection-end="687" vertical-scroll-proportion="-6.387097">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/views/meizi.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="62" selection-start="2073" selection-end="2106" vertical-scroll-proportion="-9.935484">
+        <state line="145" column="23" selection-start="6580" selection-end="6844" vertical-scroll-proportion="-10.67742">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#h4#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/meizi.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="27" selection-start="880" selection-end="880" vertical-scroll-proportion="-17.258064">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.php">
+    <entry file="file://$PROJECT_DIR$/includes/Config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="393" selection-end="393" vertical-scroll-proportion="-8.5161295">
+        <state line="16" column="13" selection-start="640" selection-end="640" vertical-scroll-proportion="-9.451612">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="579" selection-end="579" vertical-scroll-proportion="0.244">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/action.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="22" selection-start="1353" selection-end="1353" vertical-scroll-proportion="-10.16129">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/service/PageService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="60" selection-start="668" selection-end="668" vertical-scroll-proportion="0.7096774">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/views/review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="55" selection-start="3251" selection-end="3251" vertical-scroll-proportion="-17.548388">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/dao/MySQL.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="13" selection-start="1507" selection-end="1507" vertical-scroll-proportion="1.032258">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/review.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="27" selection-start="436" selection-end="436" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ReviewService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="20" selection-start="4577" selection-end="4577" vertical-scroll-proportion="0.208">
+          <folding />
         </state>
       </provider>
     </entry>

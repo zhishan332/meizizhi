@@ -11,8 +11,11 @@ define("CHARSET", "utf-8");
 define("ROOT", dirname(dirname(__FILE__)));
 define("PATH", DIRECTORY_SEPARATOR);
 define("SERVCIEROOT", (dirname(dirname(__FILE__)) . PATH . 'includes' . PATH . 'service' . PATH));
+define("HELPERROOT", (dirname(dirname(__FILE__)) . PATH . 'includes' . PATH . 'helper' . PATH));
 define("STATICROOT", "http://127.0.0.1:9999/meizizhi/web/statics");
 define("STATICROOT2", "http://127.0.0.1:8181/hunter/imgs");
+//文章使用的图片物理路径
+define("MIMGPATH", "D:/programs/nginx-1.5.9/html/hunter/imgs/");
 //查询Limit默认条数
 define('DEFAULT_LIMIT', 10);
 //sequence type

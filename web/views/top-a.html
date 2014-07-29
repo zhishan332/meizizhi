@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo STATICROOT;?>/plugin/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="<?php echo STATICROOT;?>/plugin/scrolltop/special.css" rel="stylesheet" media="screen">
     <link href="<?php echo STATICROOT;?>/css/common.css" rel="stylesheet" media="screen">
     <link href="<?php echo STATICROOT;?>/plugin/sinaEmotion/jquery.sinaEmotion-1.3.css" rel="stylesheet" media="screen">
     <link type="text/css" rel="stylesheet" href="<?php echo STATICROOT;?>/plugin/layer-v1.8.4/skin/layer.ext.css">
@@ -14,6 +15,7 @@
     <script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/bootstrap/js/bootstrap.js"></script>
     <!-- layer -->
     <script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/layer-v1.8.4/layer.min.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -67,7 +69,11 @@
                             <!--<li><a href="<?php echo $user_url; ?>">进入空间</a></li>-->
                             <!--<li><a href="#">账号信息</a></li>-->
                             <!--<li class="divider"></li>-->
+                            <?php if(empty($user)){?>
+                            <li><a href="javascript:void(0)">你还未登录</a></li>
+                            <?php }else{?>
                             <li><a href="javascript:void(0)" id="logout_btn">注销</a></li>
+                            <?php } ?>
                         </ul>
                     </li>
                 </ul>

@@ -15,41 +15,14 @@ class PageService
     public static function find($keyword, $start = 0, $limit = DEFAULT_LIMIT)
     {
         $sql = "select a.id,a.pageid,a.title,a.viewnum,a.cover,a.imgnum,a.disnum,a.praisenum,a.status,a.cuserid,a.cusername,
-                a.cdate,a.udate ,b.tagid,b.tag,b.num
-                from page a left join  page_tag b
-                on a.pageid=b.pageid  where a.status=10";
+                a.cdate,a.udate
+                from page a  where a.status=20";
         if (!empty($keyword)) {
             $sql .= " and a.title like '%" . $keyword . "%'";
         }
         $sql .= " order by a.udate desc  limit   " . $start . "," . $limit;
         $mysql = new MySQL();
-        $res = $mysql->executeReturnObj($sql);
-        $pages = array();
-        if (empty($res)) return $pages;
-        foreach ($res as $page) {
-            $pageid = $page['pageid'];
-            if (!empty($page['tagid'])) {
-                $tag['tagid'] = $page['tagid'];
-                $tag['tag'] = $page['tag'];
-                $tag['num'] = $page['num'];
-                $flag = true;
-                foreach ($pages as $key => $temPage) {
-                    if ($pageid == $temPage['pageid']) {
-                        $flag = false;
-                        array_push($temPage['tags'], $tag);
-                    }
-                    $pages[$key] = $temPage;
-                }
-                if ($flag) {
-                    $tags = array();
-                    array_push($tags, $tag);
-                    $page['tags'] = $tags;
-                    array_push($pages, $page);
-                }
-            } else {
-                array_push($pages, $page);
-            }
-        }
+        $pages = $mysql->executeReturnObj($sql);
         $mysql->closeCon();
         return $pages;
     }
@@ -58,7 +31,7 @@ class PageService
     {
         $sql = "select a.id,a.pageid,a.title,a.viewnum,a.cover,a.imgnum,a.disnum,a.praisenum,a.status,a.cuserid,a.cusername,
                 a.cdate,a.udate
-                from page  a where a.status=10 and a.showindex=1 ";
+                from page  a where a.status=20 and a.showindex=1 ";
         $sql .= " order by a.udate desc  limit   " . $start . "," . $limit;
         $mysql = new MySQL();
         $res = $mysql->executeReturnObj($sql);
@@ -70,7 +43,7 @@ class PageService
 
     public static function getTotal($keyword)
     {
-        $where = " status=10 ";
+        $where = " status=20 ";
         if (!empty($keyword)) {
             $where .= " and title like '%" . $keyword . "%'";
         }
