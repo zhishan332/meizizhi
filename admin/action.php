@@ -25,7 +25,8 @@ switch ($ac) {
 function delImg($req)
 {
     $imgid = $req['imgid'];
-    $flag = ReviewService::delImg($imgid);
+    $deltype = $req['deltype'];
+    $flag = ReviewService::delImg($imgid,$deltype);
     $response['status'] = $flag ? 1 : 0;
     echo json_encode($response);
 }

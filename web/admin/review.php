@@ -1,4 +1,5 @@
 <?php
+header("Content-type: text/html; charset=utf-8");
 require_once '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'Config.php';
 require_once ROOT . PATH . 'admin' . PATH . 'ReviewService.php';
 $page_title = "内容管理-内容审核";

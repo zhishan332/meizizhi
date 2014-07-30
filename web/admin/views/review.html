@@ -37,6 +37,7 @@
                  $pageid=$page['pageid'];
                  $cover=$page['cover'];
                  $title=$page['title'];
+
                  $imgs=$page['imgs'];
                  $st=$page['status'];
                  $si=$page['showindex'];
@@ -91,6 +92,9 @@
                         <button type="button" value="<?php echo $imgid;?>" class="btn btn-danger imgdelBtn">删除</button>
                         <button type="button" value="<?php echo $imgid;?>"
                                 class="btn btn-danger imgCoverBtn">封面
+                        </button>
+                        <button type="button" value="<?php echo $imgid;?>" class="btn btn-danger delSoftImgBtn">
+                            删除但保留图片
                         </button>
                     </div>
                     <?php } ?>
@@ -153,8 +157,13 @@
     $(document).ready(function () {
         $('.imgdelBtn').click(function () {
             var imgid = $(this).val();
-            delImg(imgid);
+            delImg(imgid,1);
         });
+        $('.delSoftImgBtn').click(function () {
+            var imgid = $(this).val();
+            delImg(imgid,2);
+        });
+
         $('.imgCoverBtn').click(function () {
             var imgid = $(this).val();
             setCover(imgid);
@@ -180,8 +189,8 @@
             window.location.href="review.php?k="+keyword+"&s="+status;
         })
     });
-    function delImg(imgid) {
-        $.post('../../admin/action.php?ac=del_img', {imgid: imgid}, function (resp) {
+    function delImg(imgid, deltype) {
+        $.post('../../admin/action.php?ac=del_img', {imgid: imgid,deltype:deltype}, function (resp) {
             if (resp && resp['status'] == 1) {
                 $('#img-' + imgid).remove();
             }
