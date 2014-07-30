@@ -33,9 +33,9 @@ class ReviewService
 
     public static function getTotal($keyword, $status)
     {
-        $where = null;
+        $where = " 1=1 ";
         if($status!=-1){
-            $where .= "  status=" .$status;
+            $where .= " and status=" .$status;
         }
         if (!empty($keyword)) {
             $where .= " and title like '%" . $keyword . "%'";
@@ -104,13 +104,13 @@ class ReviewService
         return true;
     }
 
-    public static function delPage($pageid)
+    public static function delPage($pageid,$deltype=1)
     {
         $mysql = new MySQL();
         //删除图片和图片数据
         $sqlImg = "select * from page_img where pageid=" . $pageid;
         $imgs = $mysql->executeReturnObj($sqlImg);
-        if (!empty($imgs)) {
+        if (!empty($imgs) && 1==$deltype) {
             foreach ($imgs as $img) {
                 $imgName = $img['img'];
                 //删除文件

@@ -41,7 +41,8 @@ function setCover($req)
 function delPage($req)
 {
     $pageid = $req['pageid'];
-    $flag = ReviewService::delPage($pageid);
+    $deltype = $req['deltype'];
+    $flag = ReviewService::delPage($pageid,$deltype);
     $response['status'] = $flag ? 1 : 0;
     echo json_encode($response);
 }

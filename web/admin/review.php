@@ -5,7 +5,21 @@ $page_title = "内容管理-内容审核";
 
 $key = empty($_GET['k']) ? "" : $_GET['k'];
 $pnum = empty($_GET['p']) ? 1 : $_GET['p'];
-$status = empty($_GET['s']) ? 10 : $_GET['s'];
+$status = empty($_GET['s']) ? -1 : $_GET['s'];
+
+$statusText="全部";
+switch($status){
+    case -1:
+        $statusText="全部";
+        break;
+    case 10:
+        $statusText="未审核";
+        break;
+    case 20:
+        $statusText="已审核";
+        break;
+}
+
 $size = 10;
 $start = ($pnum - 1) * $size;
 $total = 0;

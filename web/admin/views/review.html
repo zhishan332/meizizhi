@@ -1,22 +1,26 @@
 <div class="container">
     <div style="height: auto;width: 100%;">
-        <div class="input-group" style="padding: 5px 5px 5px 0;float:left;width: 300px">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Go!</button>
-          </span>
-            <input type="text" class="form-control">
-        </div>
-        <!-- /input-group -->
+
         <div class="btn-group" style="padding: 5px;float: left;">
+            <span class="label label-info"><?php echo $statusText; ?></span>
             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
                 审核状态-全部 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="review.php?s=-1">全部</a></li>
-                <li><a href="review.php?s=10">未审核</a></li>
-                <li><a href="review.php?s=20">已审核</a></li>
+                <li><a href="review.php?s=-1&k=<?php echo $key; ?>">全部</a></li>
+                <li><a href="review.php?s=10&k=<?php echo $key; ?>">未审核</a></li>
+                <li><a href="review.php?s=20&k=<?php echo $key; ?>">已审核</a></li>
             </ul>
+
         </div>
+        <div class="input-group" style="padding: 5px 5px 5px 0;float:left;width: 300px">
+            <input type="text" class="form-control" id="keyword">
+            <span class="input-group-btn">
+            <button class="btn btn-default" id="searchBtn" type="button">检索!</button>
+          </span>
+        </div>
+        <!-- /input-group -->
+
         <form class="navbar-form navbar-left" role="search" style="margin-top:5px!important;">
             <div class="form-group" style="float: left;">
                 <input type="text" style="width: 90px" class="form-control" placeholder="开始主键">
@@ -91,7 +95,11 @@
                     </div>
                     <?php } ?>
                     <div class="btn-group" style="float: right">
-                        <button type="button" value="<?php echo $pageid;?>" class="btn btn-danger delPageBtn">删除
+                        <button type="button" value="<?php echo $pageid;?>" class="btn btn-danger delPageBtn">
+                            删除
+                        </button>
+                        <button type="button" value="<?php echo $pageid;?>" class="btn btn-danger delSoftPageBtn">
+                            删除但保留图片
                         </button>
                         <button type="button" value="<?php echo $pageid;?>" class="btn btn-success updatePageBtn">
                             保存并发布
@@ -141,6 +149,7 @@
     <?php } ?>
 </div>
 <script type="text/javascript">
+    var status='<?php echo $status;?>';
     $(document).ready(function () {
         $('.imgdelBtn').click(function () {
             var imgid = $(this).val();
@@ -152,7 +161,7 @@
         });
         $('.delPageBtn').click(function () {
             var pageid = $(this).val();
-            delPage(pageid);
+            delPage(pageid, 1);
         });
         $('.updatePageBtn').click(function () {
             var pageid = $(this).val();
@@ -162,6 +171,14 @@
             var pageid = $(this).val();
             updatePage(pageid, 1);
         });
+        $('.delSoftPageBtn').click(function () {
+            var pageid = $(this).val();
+            delPage(pageid, 2);
+        });
+        $('#searchBtn').click(function () {
+            var keyword = $('#keyword').val();
+            window.location.href="review.php?k="+keyword+"&s="+status;
+        })
     });
     function delImg(imgid) {
         $.post('../../admin/action.php?ac=del_img', {imgid: imgid}, function (resp) {
@@ -178,9 +195,9 @@
         }, 'json');
     }
 
-    function delPage(pageid) {
-        if (!confirm("确定删除吗，将会删除图片和评论等?"))return;
-        $.post('../../admin/action.php?ac=del_page', {pageid: pageid}, function (resp) {
+    function delPage(pageid, deltype) {
+        if (!confirm("确定删除吗?"))return;
+        $.post('../../admin/action.php?ac=del_page', {pageid: pageid, deltype: deltype}, function (resp) {
             if (resp && resp['status'] == 1) {
                 $('#li-' + pageid).remove();
             }

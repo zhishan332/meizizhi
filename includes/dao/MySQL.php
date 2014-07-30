@@ -279,6 +279,7 @@ class MySQL
             $fieldstr = '*';
         }
         $sql = "select {$fieldstr} from {$table} {$where} limit 1";
+//        echo $sql;exit;
         $result = mysql_query($sql, $this->link);
         $resuleRow = array();
         while ($row = mysql_fetch_assoc($result)) {
