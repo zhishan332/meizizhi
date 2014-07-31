@@ -3,6 +3,8 @@ session_start();
 header("Content-type: text/html; charset=utf-8");
 require_once '..' . DIRECTORY_SEPARATOR . 'includes'.DIRECTORY_SEPARATOR . 'Config.php';
 require_once ROOT . PATH . 'includes'.PATH .'service'.PATH. 'PageService.php';
+$active='active';
+$menu_color='menu_active';
 $key = empty($_GET['k']) ? "" : $_GET['k'];
 $pnum = empty($_GET['p']) ? 1 : $_GET['p'];
 $size = 15;
