@@ -2,24 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/plugin/uploadify/uploadify-cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/plugin/uploadify/uploadify.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/includes/helper/DownLoader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/plugin/uploadify/jquery.uploadify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/plugin/uploadify/jquery.uploadify.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/statics/plugin/uploadify/uploadify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/action/uploadify.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/ReviewService.php" afterPath="$PROJECT_DIR$/admin/ReviewService.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/action.php" afterPath="$PROJECT_DIR$/admin/action.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin/views/publish.html" afterPath="$PROJECT_DIR$/web/admin/views/publish.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin/publish.php" afterPath="$PROJECT_DIR$/web/admin/publish.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin/views/top.html" afterPath="$PROJECT_DIR$/web/admin/views/top.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin/views/review.html" afterPath="$PROJECT_DIR$/web/admin/views/review.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/admin/review.php" afterPath="$PROJECT_DIR$/web/admin/review.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="f2fb19f0-053b-44d3-9f51-c4e50d112c22" name="New changelist" comment="" />
     <ignored path="meizizhi.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406785646867" ignored="false" />
+    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406795044043" ignored="false" />
     <file path="/meizi.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406703583067" ignored="false" />
     <file path="/common.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406254565183" ignored="false" />
     <file path="/index.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406703347855" ignored="false" />
@@ -32,7 +24,7 @@
     <file path="/top.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406787653906" ignored="false" />
     <file path="/index.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406613479811" ignored="false" />
     <file path="/img.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405586405585" ignored="false" />
-    <file path="/review.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406710812382" ignored="false" />
+    <file path="/review.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406795880423" ignored="false" />
     <file path="/publish.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406794369711" ignored="false" />
     <file path="/rl_exp.js" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405929954525" ignored="false" />
     <file path="/rl_exp.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1405930951941" ignored="false" />
@@ -58,9 +50,9 @@
     <file path="/log" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406534199823" ignored="false" />
     <file path="/view.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406616873025" ignored="false" />
     <file path="/StrHelper.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406613368166" ignored="false" />
-    <file path="/ReviewService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406793766787" ignored="false" />
+    <file path="/ReviewService.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406795900008" ignored="false" />
     <file path="/review.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406709106860" ignored="false" />
-    <file path="/action.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406793997354" ignored="false" />
+    <file path="/action.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406795590205" ignored="false" />
     <file path="/footer-a.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406702733573" ignored="false" />
     <file path="$PROJECT_DIR$/../kdy/webapp/views/template/detail.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406703524466" ignored="false" />
     <file path="/publish.php" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406789954490" ignored="false" />
@@ -85,11 +77,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="publish.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="publish.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/admin/views/publish.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="24" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.428">
+            <state line="62" column="24" selection-start="2424" selection-end="2424" vertical-scroll-proportion="-6.903226">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="review.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/admin/views/review.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="198" column="12" selection-start="8843" selection-end="8843" vertical-scroll-proportion="0.366">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,7 +105,7 @@
       <file leaf-file-name="action.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/action.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="33" selection-start="2808" selection-end="2808" vertical-scroll-proportion="-36.419353">
+            <state line="124" column="23" selection-start="3184" selection-end="3198" vertical-scroll-proportion="-8.741936">
               <folding />
             </state>
           </provider>
@@ -107,15 +115,6 @@
         <entry file="file://$PROJECT_DIR$/includes/Config.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="17" column="7" selection-start="648" selection-end="648" vertical-scroll-proportion="-10.451612">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DownLoader.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/helper/DownLoader.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="16" selection-start="173" selection-end="183" vertical-scroll-proportion="-2.1290324">
               <folding />
             </state>
           </provider>
@@ -139,15 +138,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="standard_1.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="919" column="9" selection-start="27315" selection-end="27315" vertical-scroll-proportion="-9.774194">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="uploadify.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/action/uploadify.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -160,7 +150,16 @@
       <file leaf-file-name="ReviewService.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/ReviewService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="27" selection-start="5524" selection-end="5524" vertical-scroll-proportion="-13.290322">
+            <state line="18" column="53" selection-start="829" selection-end="829" vertical-scroll-proportion="-10.645162">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="review.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/admin/review.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="26" selection-start="736" selection-end="736" vertical-scroll-proportion="-17.741936">
               <folding />
             </state>
           </provider>
@@ -198,17 +197,17 @@
         <option value="$PROJECT_DIR$/web/views/meizi.html" />
         <option value="$PROJECT_DIR$/web/views/view.html" />
         <option value="$PROJECT_DIR$/web/views/index.html" />
-        <option value="$PROJECT_DIR$/web/admin/review.php" />
-        <option value="$PROJECT_DIR$/web/admin/views/review.html" />
         <option value="$PROJECT_DIR$/web/statics/plugin/uploadify/uploadify.css" />
         <option value="$PROJECT_DIR$/web/admin/views/top.html" />
         <option value="$PROJECT_DIR$/includes/helper/uploadify.php" />
         <option value="$PROJECT_DIR$/web/admin/publish.php" />
         <option value="$PROJECT_DIR$/action/uploadify.php" />
         <option value="$PROJECT_DIR$/includes/helper/DownLoader.php" />
-        <option value="$PROJECT_DIR$/admin/ReviewService.php" />
-        <option value="$PROJECT_DIR$/admin/action.php" />
         <option value="$PROJECT_DIR$/web/admin/views/publish.html" />
+        <option value="$PROJECT_DIR$/admin/action.php" />
+        <option value="$PROJECT_DIR$/web/admin/review.php" />
+        <option value="$PROJECT_DIR$/admin/ReviewService.php" />
+        <option value="$PROJECT_DIR$/web/admin/views/review.html" />
       </list>
     </option>
   </component>
@@ -568,13 +567,18 @@
       <created>1406713530479</created>
       <updated>1406713530479</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="页面开发">
+      <created>1406795055431</created>
+      <updated>1406795055431</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -589,7 +593,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -657,13 +660,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_0.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="463" column="9" selection-start="13415" selection-end="13415" vertical-scroll-proportion="-12.096774">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/admin/publish.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="38" selection-start="278" selection-end="304" vertical-scroll-proportion="-4.2580647">
@@ -693,13 +689,6 @@
             <marker date="1372987490000" expanded="true" signature="-1:-1" placeholder="..." />
             <marker date="1372987490000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/views/review.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="19" selection-start="8313" selection-end="8534" vertical-scroll-proportion="-9.225806">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,24 +741,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/ReviewService.php">
+    <entry file="file://$PROJECT_DIR$/web/admin/views/publish.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="27" selection-start="5524" selection-end="5524" vertical-scroll-proportion="-13.290322">
+        <state line="62" column="24" selection-start="2424" selection-end="2424" vertical-scroll-proportion="-6.903226">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/action.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="33" selection-start="2808" selection-end="2808" vertical-scroll-proportion="-36.419353">
+        <state line="124" column="23" selection-start="3184" selection-end="3198" vertical-scroll-proportion="-8.741936">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/admin/views/publish.html">
+    <entry file="file://$PROJECT_DIR$/web/admin/review.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="24" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.428">
+        <state line="28" column="26" selection-start="736" selection-end="736" vertical-scroll-proportion="-17.741936">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/ReviewService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="53" selection-start="829" selection-end="829" vertical-scroll-proportion="-10.645162">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/admin/views/review.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="198" column="12" selection-start="8843" selection-end="8843" vertical-scroll-proportion="0.366">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

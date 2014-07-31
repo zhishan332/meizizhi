@@ -7,6 +7,7 @@ $page_title = "内容管理-内容审核";
 $key = empty($_GET['k']) ? "" : $_GET['k'];
 $pnum = empty($_GET['p']) ? 1 : $_GET['p'];
 $status = empty($_GET['s']) ? -1 : $_GET['s'];
+$pid = empty($_GET['pid']) ? '' : $_GET['pid'];
 
 $statusText="全部";
 switch($status){
@@ -25,8 +26,8 @@ $size = 10;
 $start = ($pnum - 1) * $size;
 $total = 0;
 
-$pages = ReviewService::find($key, $status, $start, 15);
-$total = ReviewService::getTotal($key, $status);
+$pages = ReviewService::find($key, $status,$pid,$start, 15);
+$total = ReviewService::getTotal($key, $status,$pid);
 //分页使用
 $tt = ceil($total / 15 * 8);
 $ee = ceil($pnum / 8);

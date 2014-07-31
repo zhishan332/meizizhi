@@ -11,7 +11,10 @@
                 <li><a href="review.php?s=10&k=<?php echo $key; ?>">未审核</a></li>
                 <li><a href="review.php?s=20&k=<?php echo $key; ?>">已审核</a></li>
             </ul>
-
+        </div>
+        <div class="input-group" style="padding: 5px 5px 5px 0;float:left;width: 100px">
+            <input type="text"  placeholder="pageid" class="form-control" id="s_pageid" style="width: 100px">
+          </span>
         </div>
         <div class="input-group" style="padding: 5px 5px 5px 0;float:left;width: 300px">
             <input type="text" class="form-control" id="keyword">
@@ -62,6 +65,7 @@
                         <input type="text" id="title-<?php echo $pageid;?>" class="form-control" placeholder="标题"
                                value="<?php echo $title;?>">
                         <span class="label label-default">主键：<?php echo $id; ?></span>
+                        <span class="label label-default">PAGEID：<?php echo $pageid; ?></span>
                         <span class="label label-primary">标题字数：<?php echo strlen($title); ?></span>
                         <?php if($st==20){?>
                         <span class="label label-success">审核通过</span>
@@ -110,6 +114,9 @@
                         </button>
                         <button type="button" value="<?php echo $pageid;?>" class="btn btn-warning updatePageIndexBtn">
                             保存并发到首页
+                        </button>
+                        <button type="button" value="<?php echo $pageid;?>" class="btn btn-danger noIndexPageBtn">
+                            从首页撤下
                         </button>
                     </div>
                 </div>
@@ -186,8 +193,13 @@
         });
         $('#searchBtn').click(function () {
             var keyword = $('#keyword').val();
-            window.location.href="review.php?k="+keyword+"&s="+status;
-        })
+            var pageid=$('#s_pageid').val();
+            window.location.href="review.php?k="+keyword+"&s="+status+"&pid="+pageid;
+        });
+        $('.noIndexPageBtn').click(function () {
+            var pageid = $(this).val();
+            doNotShowIndex(pageid);
+        });
     });
     function delImg(imgid, deltype) {
         $.post('../../admin/action.php?ac=del_img', {imgid: imgid,deltype:deltype}, function (resp) {
@@ -215,6 +227,13 @@
     function updatePage(pageid, showindex) {
         var title = $('#title-' + pageid).val();
         $.post('../../admin/action.php?ac=update_page', {pageid: pageid, title: title, showindex: showindex}, function (resp) {
+            if (resp && resp['status'] == 1) {
+                alert('设置成功');
+            }
+        }, 'json');
+    }
+    function doNotShowIndex(pageid){
+        $.post('../../admin/action.php?ac=donot_showindex', {pageid: pageid}, function (resp) {
             if (resp && resp['status'] == 1) {
                 alert('设置成功');
             }

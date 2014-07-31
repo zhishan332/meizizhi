@@ -26,6 +26,10 @@ switch ($ac) {
     case 'add_page':
         addPage($_POST);
         break;
+
+    case 'donot_showindex':
+        doNotShowIndex($_POST);
+        break;
 }
 
 function delImg($req)
@@ -115,5 +119,12 @@ function addPage($req)
     $page['showindex']=$showindex;
     ReviewService::addPage($page,$imgArr);
     $response['status'] = 1;
+    echo json_encode($response);
+}
+
+function doNotShowIndex($req){
+    $pageid = $req['pageid'];
+    $flag = ReviewService::updateShowIndex($pageid, 0);
+    $response['status'] = $flag ? 1 : 0;
     echo json_encode($response);
 }

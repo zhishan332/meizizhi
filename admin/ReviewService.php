@@ -4,7 +4,7 @@ require_once dirname(dirname(__FILE__)) . PATH . 'includes' . PATH . 'dao' . PAT
 
 class ReviewService
 {
-    public static function find($keyword, $status = 10, $start = 0, $limit = DEFAULT_LIMIT)
+    public static function find($keyword, $status = 10,$pageid, $start = 0, $limit = DEFAULT_LIMIT)
     {
         $sql = "select a.id,a.pageid,a.title,a.viewnum,a.cover,a.imgnum,a.disnum,a.praisenum,a.showindex,a.status,a.cuserid,a.cusername,
                 a.cdate,a.udate
@@ -14,6 +14,9 @@ class ReviewService
         }
         if (!empty($keyword)) {
             $sql .= " and a.title like '%" . $keyword . "%'";
+        }
+        if (!empty($pageid)) {
+            $sql .= " and a.pageid = " . trim($pageid) ;
         }
         $sql .= " order by a.udate desc  limit   " . $start . "," . $limit;
         $mysql = new MySQL();
@@ -31,7 +34,7 @@ class ReviewService
         return $pages;
     }
 
-    public static function getTotal($keyword, $status)
+    public static function getTotal($keyword, $status,$pageid)
     {
         $where = " 1=1 ";
         if ($status != -1) {
@@ -39,6 +42,9 @@ class ReviewService
         }
         if (!empty($keyword)) {
             $where .= " and title like '%" . $keyword . "%'";
+        }
+        if (!empty($pageid)) {
+            $where .= " and pageid = " . $pageid ;
         }
         $mysql = new MySQL();
         $total = $mysql->countRows("page", $where);
@@ -161,5 +167,14 @@ class ReviewService
             $mysql->insert('page_img',$imgObj);
         }
         $mysql->closeCon();
+    }
+
+    public static function updateShowIndex($pageid,$showIndex){
+        $nt = time() * 1000;
+        $sql = "update page set  showindex=" . $showIndex . ",udate=" . $nt . " where pageid=" . $pageid;
+        $mysql = new MySQL();
+        $mysql->execute($sql);
+        $mysql->closeCon();
+        return true;
     }
 }
