@@ -1,5 +1,71 @@
 <div class="container">
-
+    <form role="form">
+        <div class="form-group">
+            <label for="title">名称</label>
+            <input type="text" class="form-control" id="title"
+                   placeholder="请输入名称">
+        </div>
+        <div class="form-group">
+            <label for="imgurl">图片地址</label>
+            <input type="text" class="form-control" id="imgurl"
+                   placeholder="可用;隔开">
+        </div>
+        <div class="form-group">
+            <label for="uploadify">文件输入</label>
+            <input type="file" name="uploadify" id="uploadify">
+            <label for="imgname">上传图片名称</label>
+            <input type="text" class="form-control" id="imgname"
+                   placeholder="图片名称">
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" id="showindex" > 首页展示
+            </label>
+        </div>
+        <button type="button" id="saveBtn" class="btn btn-default btn-lg">提 交</button>
+    </form>
 </div>
+<script type="text/javascript" src="<?php echo STATICROOT;?>/plugin/uploadify/jquery.uploadify.js"></script>
+<script type="text/javascript">
+    var uploadSwf = '<?php echo STATICROOT;?>' + '/plugin/uploadify/uploadify.swf';
+    $(document).ready(function () {
+        $("#uploadify").uploadify({
+            formData: {
+                'timestamp': '<?php echo $timestamp;?>',
+                'token': '<?php echo $token;?>'
+            },
+            height: 30,
+            swf: uploadSwf,
+            uploader: '../../action//uploadify.php',
+            width: 120,
+            buttonText: '选择图片',
+            //上传到服务器，服务器返回相应信息到data里
+            'onUploadSuccess': function (file, data, response) {
+                if (data != 0) {
+                    var v = $('#imgname').val();
+                    $('#imgname').val(v + data + ";");
+                }
+            }
+        });
+
+        $('#saveBtn').click(function () {
+            save();
+        });
+    });
+    function save() {
+        var title=$('#title').val();
+        var imgurl=$('#imgurl').val();
+        var imgname=$('#imgname').val();
+        var showindex=$('#showindex').attr("checked")=='checked'?1:0;
+        $.post('../../admin/action.php?ac=add_page', {title: title,imgurl:imgurl,imgname:imgname,showindex:showindex}, function (resp) {
+            if (resp && resp['status'] == 1) {
+               $('.input').val("");
+               alert("保存成功");
+            }else{
+                alert("失败："+ resp['msg']);
+            }
+        }, 'json');
+    }
+</script>
 </body>
 </html>

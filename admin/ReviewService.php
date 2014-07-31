@@ -149,4 +149,17 @@ class ReviewService
         $mysql->closeCon();
         return true;
     }
+
+    public static function  addPage($page,$imgs){
+        $mysql = new MySQL();
+        $data['pageid']=
+        $mysql->insert('page',$page);
+        $pageid=$page['pageid'];
+        foreach($imgs as $img){
+            $imgObj['pageid']=$pageid;
+            $imgObj['img']=$img;
+            $mysql->insert('page_img',$imgObj);
+        }
+        $mysql->closeCon();
+    }
 }
