@@ -3,13 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/footer-a.html" afterPath="$PROJECT_DIR$/web/views/footer-a.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/top-a.html" afterPath="$PROJECT_DIR$/web/views/top-a.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="f2fb19f0-053b-44d3-9f51-c4e50d112c22" name="New changelist" comment="" />
     <ignored path="meizizhi.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406855757681" ignored="false" />
+    <file path="/Dummy.txt" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406861082225" ignored="false" />
     <file path="/meizi.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406703583067" ignored="false" />
     <file path="/common.css" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406796450141" ignored="false" />
     <file path="/index.html" changelist="2dc2bea5-bfc6-40f1-bf14-62e75ca95196" time="1406703347855" ignored="false" />
@@ -108,7 +107,7 @@
       <file leaf-file-name="footer-a.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/views/footer-a.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="9" selection-start="671" selection-end="671" vertical-scroll-proportion="0.56">
+            <state line="12" column="82" selection-start="637" selection-end="637" vertical-scroll-proportion="0.472">
               <folding />
             </state>
           </provider>
@@ -393,13 +392,18 @@
       <created>1406797431150</created>
       <updated>1406797431150</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="页面开发">
+      <created>1406861085661</created>
+      <updated>1406861085661</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -414,7 +418,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32715008" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -581,7 +584,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/views/footer-a.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="9" selection-start="671" selection-end="671" vertical-scroll-proportion="0.56">
+        <state line="12" column="82" selection-start="637" selection-end="637" vertical-scroll-proportion="0.472">
           <folding />
         </state>
       </provider>
