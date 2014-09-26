@@ -94,7 +94,7 @@ function addPage($req)
         $urlArr = explode(";", $imgurl);
         foreach ($urlArr as $url) {
             if (empty($url)) continue;
-            $newName=uniqid()."jpg";
+            $newName=uniqid().".jpg";
             $tarFilePath=MIMGPATH.$newName;
             DownLoader::download($url,$tarFilePath);
             $imgArr[] = $newName;
