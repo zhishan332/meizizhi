@@ -1,4 +1,4 @@
-meizizhi
+simple web project
 ========
 
-妹子志，记录世界好妹子
+simple project 
